@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './ListMenu.module.scss';
+
 const ListMenu = ({ mobile, menuTab, listInfo, render, children }) => {
     let isFrontTab;
     const isMenuTab = `menu-tab__main-list`;
@@ -7,9 +9,9 @@ const ListMenu = ({ mobile, menuTab, listInfo, render, children }) => {
     if(!menuTab) {
         isFrontTab = `header-home-section__list ${mobile ? '' : 'hide-section'}`;
     }
-    
+
     return (
-        <ul id={`nav-list-${mobile ? 'mobile' : 'desk'}`} 
+        <ul id={`nav-list-${mobile ? 'mobile' : 'desk'}`}
             className={menuTab ? isMenuTab : isFrontTab}
         >
             {listInfo.map(render || children)}

@@ -1,0 +1,165 @@
+@import '../../styles/variables.module';
+
+.headerHomeSection {
+  text-align: center;
+  margin-bottom: 1.2em;
+  padding-top: 12em;
+  position: relative;
+}
+
+.navSection {
+  position: fixed;
+  width: 100%;
+  background: $--white;
+  box-shadow: 0px 2px 4px rgb(0 0 0 / 5%);
+  left: 0;
+  top: 0;
+  z-index: 7;
+}
+
+.menu-active + .headerHomeSection .header-home-nav {
+  border-bottom: 1px solid $--background-color;
+}
+
+.headerHomeSection__list {
+  font-size: 1.4rem;
+  color: #C7C7C7;
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 1em;
+  justify-content: center;
+  align-items: center;
+  overflow-x: scroll;
+  scrollbar-width: none;
+}
+
+.headerHomeSection__list::-webkit-scrollbar { /* hiding the scrollbar */
+  width: 0;
+}
+
+.headerHomeSection__list-option:first-child {
+  margin-left: 7em;
+}
+
+.headerHomeSection__list-option:first-child.selected { /* margin left when the first child is selected */
+  margin-left: 6em;
+}
+
+.headerHomeSection__list-option {
+  display: inline-block;
+  margin: 0 .5em;
+  cursor: pointer;
+}
+
+.headerHomeSection__text {
+  color: $--black;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.headerHomeSection__order {
+  border: none;
+  font-size: 1.2rem;
+  color: #797979;
+  background-color: $--white;
+}
+
+.headerHomeSection__order:focus-visible {
+  outline: none;
+}
+
+.headerHomeNav {
+  display: flex;
+  max-width: 1180px;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6em 1.2em;
+}
+
+.menuIcon {
+  width: 25px;
+  height: 21px;
+  cursor: pointer;
+}
+
+.hideLogo {
+  display: none;
+}
+
+.frontContainer, .back-container {
+  display: flex;
+  align-items: center;
+}
+
+.frontContainer .name-product, .back-container .price-product {
+  margin-top: 0;
+}
+
+.rightNav {
+  position: relative;
+}
+
+.shoppingCart {
+  width: 25px;
+  height: 21px;
+  cursor: pointer;
+}
+
+@media (min-width: 415px) {
+  .headerHomeSection__list-option:first-child.selected, .headerHomeSection__list-option:first-child {
+    margin-left: 0;
+  }
+
+  .headerHomeSection__order, .headerHomeSection__text {
+    display: none;
+  }
+}
+
+@media (min-width: 500px) {
+  .menuIcon {
+    display: none;
+  }
+
+  .rightNav {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+}
+
+@media (min-width: 730px) {
+  .headerHomeSection__list {
+    font-size: 1.5rem;
+  }
+
+}
+
+@media (min-width: 765px) {
+  .headerHomeSection__list {
+    display: none;
+  }
+
+  .leftNav .headerHomeSection__list {
+    display: inline-block;
+    width: auto;
+    margin-bottom: 0;
+    overflow: unset;
+    margin-left: 1.6em;
+  }
+
+  .leftNav {
+    display: flex;
+    align-items: center;
+  }
+
+}
+
+@media not all and (min-resolution:.001dpcm) {
+  @supports (-webkit-appearance:none) and (display:flow-root) {
+    .navSection {
+      border-top: 1px solid #EEE;
+    }
+  }
+}

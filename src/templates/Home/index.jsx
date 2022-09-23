@@ -10,7 +10,7 @@ import { useProducts } from '@hooks/useProducts';
 import { useNavList } from "./hooks/useNavList";
 import { useHome } from "./hooks/useHome";
 
-import styles from './Home.module.scss';
+// import styles from './Home.module.scss';
 
 const Home = ({ currentUser, setCurrentUser, synchronizeCurrentUser }) => {
 

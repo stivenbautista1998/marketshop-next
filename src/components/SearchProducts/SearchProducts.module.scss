@@ -1,0 +1,88 @@
+@import '../../styles/variables.module';
+
+.searchWrapper {
+  width: 100%;
+}
+
+.generalInput {
+  width: 90%;
+  background-color: $--text-input;
+  color: #797979;
+  font-size: 1.4rem;
+  font-weight: 400;
+  padding: 0.8em 0.7em;
+  border-radius: 7px;
+  border: none;
+}
+
+.generalInput:-webkit-autofill,
+.generalInput:-webkit-autofill:hover,
+.generalInput:-webkit-autofill:focus,
+.generalInput:-webkit-autofill:active  {
+  box-shadow: 0 0 0 30px $--text-input inset;
+}
+
+.generalInput:focus-visible {
+  outline: none;
+}
+
+.centerSearch {
+  margin: 1em auto;
+  position: relative;
+}
+
+.searchHomeSection {
+  position: fixed;
+  z-index: 6;
+  top: 54px;
+  left: 5%;
+  max-width: 450px;
+  transition: transform .2s; /* time of transitions */
+}
+
+.searchHidden {
+  transform: translateY(-68px); /* moves the element in the Y axis */
+}
+
+.closeVisible, .show-section, .menu-active {
+  visibility: visible;
+}
+
+.searchHomeIcon {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 12px;
+}
+
+.searchIcon {
+  left: 12px;
+}
+
+.headerHomeSection__search {
+  width: 80%;
+  background: transparent;
+  border: none;
+  color: #797979;
+  font-size: 1.4rem;
+}
+
+.headerHomeSection__search::placeholder {
+  color: #C7C7C7;
+}
+
+.headerHomeSection__search:focus-visible {
+  outline: none;
+}
+
+.cleanSearch {
+  right: 12px;
+  visibility: hidden;
+  cursor: pointer;
+}
+
+@media (min-width: 430px) {
+  .generalInput {
+    width: 100%;
+  }
+}
