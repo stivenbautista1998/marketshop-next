@@ -1,0 +1,108 @@
+.close-icon {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: 14px;
+    right: 12px;
+    cursor: pointer;
+    fill: #C7C7C7;
+}
+
+.arrow-icon {
+    width: 15px;
+    height: 15px;
+    fill: #C7C7C7;
+    cursor: pointer;
+}
+
+.back-icon {
+    transform: rotate(180deg);
+}
+
+.close-item {
+    position: static;
+    display: inline-block;
+    margin-left: 1em;
+}
+
+.sms-icon {
+    width: 153px;
+    height: 153px;
+    margin-bottom: 3em;
+}
+
+.menu-icon {
+    width: 25px;
+    height: 21px;
+    cursor: pointer;
+}
+
+.shopping-cart {
+    width: 25px;
+    height: 21px;
+    cursor: pointer;
+}
+
+.search-icon {
+    left: 12px;
+}
+
+.add_to_card {
+    width: 40px;
+    height: 40px;
+    margin-top: .2em;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.no-shop-icon {
+    width: 50%;
+    height: 200px;
+    display: block;
+    margin: 4em auto;
+}
+
+.normal--size {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 0.5em;
+}
+
+.search-home-icon {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 12px;
+}
+
+.clean-search {
+    right: 12px;
+    visibility: hidden;
+    cursor: pointer;
+}
+
+.not-found-icon {
+    width: 250px;
+    display: block;
+    margin: 2em auto;
+}
+
+.arrow-down-icon {
+    color: #cacaca;
+}
+
+
+@media (min-width: 415px) {
+    .not-found-icon {
+        width: 300px;
+        margin: 4em auto;
+    }
+}
+
+@media (min-width: 730px) {
+    .not-found-icon {
+        margin: 8em auto;
+    }
+}

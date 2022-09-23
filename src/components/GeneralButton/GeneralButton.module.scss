@@ -1,0 +1,49 @@
+@import '../../styles/variables.module';
+
+.generalButton {
+  width: 90%;
+  min-width: 288px;
+  padding: 1em;
+  border-radius: 10px;
+  font-size: 1.4rem;
+  border: 1px solid $--hospital-green;
+  cursor: pointer;
+}
+
+.greenBtn:disabled {
+  background-color: #CCC;
+}
+
+.whiteBtn {
+  background-color: $--white;
+  color: $--hospital-green;
+}
+
+.greenBtn {
+  background-color: $--hospital-green;
+  color: $--white;
+}
+
+.whiteBtn, .greenBtn {
+  margin-bottom: 3em;
+}
+
+.greenBtn, .greenBtn {
+  margin-top: 2em;
+}
+
+.greenBtn {
+  margin-top: 2em;
+}
+
+@media (min-width: 430px) {
+  .generalButton {
+    width: 100%;
+  }
+
+  .greenBtn, .whiteBtn {
+    margin-top: 2.8em;
+    width: 400px;
+  }
+}
+

@@ -1,0 +1,47 @@
+@import "../../styles/variables.module";
+
+.logoIcon {
+  height: 85px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoIcon {
+  height: 85px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoIconSmall {
+  height: 41px;
+  display: flex;
+  align-items: center;
+}
+
+.textLogo {
+  font-weight: bold;
+}
+
+.mainBlue {
+  color: rgb(62, 215, 230);
+}
+
+.bigLogoText {
+  font-size: 3rem;
+}
+
+.normalLogoText {
+  font-size: 1.8rem;
+}
+
+.green__message {
+  color: $--hospital-green;
+}
+
+@media (min-width: 765px) {
+  .logoIconSmall {
+      height: 48px;
+  }
+}

@@ -1,0 +1,14 @@
+$--background-color: #F2F2F2;
+$--dark: #232830;
+$--black: #000;
+$--hospital-green: #ACD9B2;
+$--very-light-pink: #C7C7C7;
+$--white: #fff;
+$--text-input: #F7F7F7;
+$--soft-blue: #3498DB;
+$--size-normal: 1.4rem;
+$--size-big: 2rem;
+
+:export { // it can be exported to js directly.  By import { varName } from '../styles/_variables.module.scss';
+  colorBackground: $--white;
+}
