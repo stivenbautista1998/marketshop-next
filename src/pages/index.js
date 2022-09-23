@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Home } from "@templates/Home";
 import { AuthContext } from "@context/AuthContext";
+import { RouteGuard } from "@components/RouteGuard";
 
 export default function HomeApp() {
   const {
@@ -10,10 +11,13 @@ export default function HomeApp() {
   } = useContext(AuthContext);
 
   return (
-    <Home
-      currentUser={currentUser}
-      setCurrentUser={setCurrentUser}
-      synchronizeCurrentUser={synchronizeCurrentUser}
-    />
+    <RouteGuard>
+      <Home
+        currentUser={currentUser}
+        setCurrentUser={setCurrentUser}
+        synchronizeCurrentUser={synchronizeCurrentUser}
+      />
+    </RouteGuard>
   )
 }
+//

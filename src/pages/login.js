@@ -1,9 +1,7 @@
 import { Login } from '@templates/Login';
 
 function LoginPage() {
-  return (
-    <Login />
-  );
+  return <Login />;
 }
 
 export default LoginPage;

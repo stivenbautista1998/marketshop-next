@@ -8,7 +8,7 @@ import { MyOrderDetail } from "@templates/MyOrderDetail";
 import { MyOrders } from "@templates/MyOrders";
 import { SuccessEmail } from "@templates/SuccessEmail";
 import { NotFound } from "@templates/NotFound";
-import { ProtectedRoute } from "@components/ProtectedRoute";
+import { ProtectedRoute } from "@components/RouteGuard";
 import { LoginProtectedRoute } from "@components/LoginProtectedRoute";
 
 import AppContext from "@context/AppContext";

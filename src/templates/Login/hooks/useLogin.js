@@ -18,7 +18,7 @@ const useLogin = () => {
     const [ errorState, setErrorState ] = useState(defaultErrorState);
     const formRef = useRef(null);
     let router = useRouter();
-
+    console.log("use login!")
     const handlerSubmit = (event) => {
         event.preventDefault();
         setErrorState(defaultErrorState);
@@ -30,6 +30,7 @@ const useLogin = () => {
         if(data.user !== "" && data.password !== "") {
             if(validateEmail(data.user)) {
                 const userInfo = validateUser(data.user, data.password, true);
+
                 if(userInfo) {
                     setCurrentUser(userInfo); // set this user as the current one
                     getUserCurrentState(userInfo); // get all the state info for that user.

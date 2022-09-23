@@ -74,8 +74,6 @@ const useInitialState = () => {
         });
     };
 
-    console.log({ addToCart });
-
     const removeFromCart = ( productToDelete ) => {
         setCurrentState({
             ...currentState,
