@@ -13,8 +13,8 @@ const JustIcon = ({ size = null/* , responsiveSize = null */ }) => {
     <Image
       src={appIcon}
       /* className={ responsiveSize !== null ? "logo-icon-small" : "" } */
-      width={ size !== null ? { height: iconSize[size] } : iconSize["small"] }
-      height={ size !== null ? { height: iconSize[size] } : iconSize["small"] }
+      width={ size !== null ? iconSize[size] : iconSize["small"] }
+      height={ size !== null ? iconSize[size] : iconSize["small"] }
       objectFit="fill"
       alt="logo app"
     />

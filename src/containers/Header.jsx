@@ -117,80 +117,80 @@ class Header extends Component {
         }
 
         return (
-            <header className="header-home-section">
-                {/* <nav className="nav-section">
-                    <div ref={this.props.refHeader} className="header-home-nav">
-                      <div className="menu-icon" onClick={this.showMenu}>
-                        <Image
-                          src={menuSvg}
-                          width={25}
-                          height={21}
-                          objectFit="fill"
-                          alt="menu icon"
-                        />
-                      </div>
-                        <div className={`left-nav ${this.state.showLogoApp ? "" : "hide-logo"}`}>
-                            <IconApp />
-                            <ListMenu
-                                mobile={false}
-                                menuTab={false}
-                                listInfo={this.props.navListItems}
-                                render={(item, index) => (
-                                    <ListMenuItem
-                                        key={index}
-                                        {...item}
-                                        mobile={false}
-                                        menuTab={false}
-                                        handleHomeList={this.handleHomeList}
-                                    />
-                                )}
-                            />
-                        </div>
-                        <h2 className={this.state.showLogoApp ? "hide-logo" : "front-container"}>
-                            <JustIcon size="small" />
-                            Shopping cart
-                        </h2>
-                        <div className="right-nav">
-                            <UserMenu
-                                userEmail={ this.props.userInfo?.username ? this.props.userInfo.username : "No selected" }
-                                showNav={this.state.showNav}
-                                setCurrentUser={this.props.setCurrentUser}
-                                handleMenuNav={this.handleMenuNav}
-                            />
-                            <CartCircle />
-                            <div className="shopping-cart" onClick={this.showShoppingCard}>
-                              <Image
-                                src={shoppingIconSvg}
-                                width={25}
-                                height={21}
-                                objectFit="fill"
-                                alt="shopping cart icon"
-                              />
-                            </div>
-                        </div>
-                    </div>
-                </nav> */}
-                <SearchProducts
-                    leftPosition={leftPosition}
-                    searchValue={this.state.searchValue}
-                    setSearchValue={(newValue) => this.setState({ searchValue: newValue })}
-                    filterBySearch={this.props.filterBySearch}
-                />
-                <ListMenu
-                    mobile={true}
+          <header className="header-home-section">
+            <nav className="nav-section">
+              <div ref={this.props.refHeader} className="header-home-nav">
+                <div className="menu-icon" onClick={this.showMenu}>
+                  <Image
+                    src={menuSvg}
+                    width={25}
+                    height={21}
+                    objectFit="fill"
+                    alt="menu icon"
+                  />
+                </div>
+                <div className={`left-nav ${this.state.showLogoApp ? "" : "hide-logo"}`}>
+                  <IconApp />
+                  <ListMenu
+                    mobile={false}
                     menuTab={false}
                     listInfo={this.props.navListItems}
                     render={(item, index) => (
                         <ListMenuItem
                             key={index}
                             {...item}
-                            mobile={true}
+                            mobile={false}
                             menuTab={false}
                             handleHomeList={this.handleHomeList}
                         />
                     )}
-                />
-            </header>
+                  />
+                </div>
+                <h2 className={this.state.showLogoApp ? "hide-logo" : "front-container"}>
+                  <JustIcon size="small" />
+                  Shopping cart
+                </h2>
+                <div className="right-nav">
+                  <UserMenu
+                    userEmail={ this.props.userInfo?.username ? this.props.userInfo.username : "No selected" }
+                    showNav={this.state.showNav}
+                    setCurrentUser={this.props.setCurrentUser}
+                    handleMenuNav={this.handleMenuNav}
+                  />
+                  <CartCircle />
+                  <div className="shopping-cart" onClick={this.showShoppingCard}>
+                    <Image
+                      src={shoppingIconSvg}
+                      width={25}
+                      height={21}
+                      objectFit="fill"
+                      alt="shopping cart icon"
+                    />
+                  </div>
+                </div>
+              </div>
+            </nav>
+            <SearchProducts
+                leftPosition={leftPosition}
+                searchValue={this.state.searchValue}
+                setSearchValue={(newValue) => this.setState({ searchValue: newValue })}
+                filterBySearch={this.props.filterBySearch}
+            />
+            <ListMenu
+                mobile={true}
+                menuTab={false}
+                listInfo={this.props.navListItems}
+                render={(item, index) => (
+                    <ListMenuItem
+                        key={index}
+                        {...item}
+                        mobile={true}
+                        menuTab={false}
+                        handleHomeList={this.handleHomeList}
+                    />
+                )}
+            />
+          </header>
         );
     }
 }
