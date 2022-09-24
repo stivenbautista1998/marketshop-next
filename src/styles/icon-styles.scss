@@ -1,13 +1,3 @@
-.close-icon {
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    top: 14px;
-    right: 12px;
-    cursor: pointer;
-    fill: #C7C7C7;
-}
-
 .arrow-icon {
     width: 15px;
     height: 15px;
@@ -17,12 +7,6 @@
 
 .back-icon {
     transform: rotate(180deg);
-}
-
-.close-item {
-    position: static;
-    display: inline-block;
-    margin-left: 1em;
 }
 
 .sms-icon {
@@ -37,13 +21,6 @@
     margin-top: .2em;
     cursor: pointer;
     z-index: 2;
-}
-
-.no-shop-icon {
-    width: 50%;
-    height: 200px;
-    display: block;
-    margin: 4em auto;
 }
 
 .normal--size {

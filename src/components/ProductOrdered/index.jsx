@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { capitalizeAll, becomeDollar } from '@helpers/format';
 
 import xIconSvg from '@icons/x-icon.svg';
+import styles from './ProductOrdered.module.scss';
 
 const ProductOrdered = ({ productInfo, deleteItem = null }) => {
     const [ removeProduct, setRemoveProduct ] = useState(false);
@@ -15,16 +16,16 @@ const ProductOrdered = ({ productInfo, deleteItem = null }) => {
 
     return (
       <div>
-        <article className={`shopping-card-item ${ removeProduct ? 'deleted-item' : '' }`}>
-          <div className='front-container'>
-            <div className='image-border' style={{ backgroundImage: `url(${productInfo.images[0]})` }}></div>
-            <span className='name-product'>{capitalizeAll(productInfo.title)}</span>
+        <article className={`${styles.shoppingCardItem} ${ removeProduct ? styles.deletedItem : '' }`}>
+          <div className={styles.frontContainer}>
+            <div className={styles.imageBorder} style={{ backgroundImage: `url(${productInfo.images[0]})` }}></div>
+            <span className={styles.nameProduct}>{capitalizeAll(productInfo.title)}</span>
           </div>
-          <div className='back-container'>
-            <span className='price-product'>{becomeDollar(productInfo.price)} </span>
+          <div className={styles.backContainer}>
+            <span className={styles.priceProduct}>{becomeDollar(productInfo.price)} </span>
             {
               deleteItem !== null ?
-              <div className='close-icon close-item' onClick={deleteProductOrdered}>
+              <div className={`${styles.closeIcon} ${styles.closeItem}`} onClick={deleteProductOrdered}>
                 <Image
                   src={xIconSvg}
                   width={12}

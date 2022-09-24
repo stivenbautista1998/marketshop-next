@@ -1,0 +1,30 @@
+
+.menuTab__mainList, .menu-tab__logged {
+  list-style-type: none;
+  font-size: 1.3rem;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(151, 151, 151, 0.1);
+  margin-bottom: 2em;
+  padding-bottom: 2em;
+}
+
+.headerHomeSection__list {
+  font-size: 1.4rem;
+  color: #C7C7C7;
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 1em;
+  justify-content: center;
+  align-items: center;
+  overflow-x: scroll;
+  scrollbar-width: none;
+}
+
+.headerHomeSection__list::-webkit-scrollbar { /* hiding the scrollbar */
+  width: 0;
+}
+
+.hideSection {
+  display: none;
+}

@@ -1,0 +1,94 @@
+@import '../../styles/variables.module';
+
+.shoppingCardItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5em;
+  transition: transform .3s;
+}
+
+.deletedItem {
+  border-radius: 10px;
+  background-color: $--text-input;
+  transform: translateX(-100vw);
+}
+
+.frontContainer {
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+}
+
+.imageBorder {
+  border-radius: 10px;
+  display: inline-block;
+  overflow: hidden;
+  margin-right: 1.2em;
+  width: 69px;
+  height: 68px;
+  background-position-x: center;
+  background-position-y: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #CCC;
+}
+
+.nameProduct {
+  font-size: 1.1rem;
+  color: #797979;
+  font-weight: 300;
+  max-width: 100px;
+  margin-top: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.backContainer {
+  display: flex;
+  align-items: center;
+}
+
+.nameProduct, .priceProduct {
+  margin-top: .4em;
+  display: block;
+}
+
+.priceProduct {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #404040;
+  width: 100%;
+  margin-top: 0;
+}
+
+.closeIcon {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  top: 14px;
+  right: 12px;
+  cursor: pointer;
+  fill: #C7C7C7;
+}
+
+.closeItem {
+  position: static;
+  display: inline-block;
+  margin-left: 1em;
+}
+
+@media (min-width: 415px) {
+  .nameProduct {
+    max-width: 133px;
+  }
+}
+
+@media (min-width: 730px) {
+  .nameProduct {
+    max-width: 155px;
+  }
+}

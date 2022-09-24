@@ -90,6 +90,7 @@ class Header extends Component {
   }
 
   showShoppingCard() {
+    console.log("has been clicked!!");
     if(window.innerWidth < 500) { // if the screen size is more less than 500px then work with the mobile class for menu.
       if(this.props.showShoppingCardTab === true) {
         this.removeShoppingTabStyle();

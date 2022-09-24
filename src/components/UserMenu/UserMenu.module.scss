@@ -1,0 +1,98 @@
+@import '../../styles/variables.module';
+
+.emailMenu {
+  display: none;
+}
+
+.showSection {
+  visibility: visible;
+}
+
+.styleNoLink {
+  text-decoration: none;
+  color: $--black;
+}
+
+.menuTab__logging {
+  font-weight: 500;
+  text-decoration: none;
+  color: $--hospital-green;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.menuTab__logging, .menu-tab__email {
+  font-size: 1.2rem;
+  display: inline-block;
+  margin-bottom: .5em;
+}
+
+@media (min-width: 500px) {
+  .emailMenu {
+    position: relative;
+    display: inline-block;
+    margin-right: 1.2em;
+  }
+
+  .emailMenu__front {
+    cursor: pointer;
+  }
+
+  .emailMenu__list {
+    position: absolute;
+    text-align: right;
+    background-color: $--white;
+    border-radius: 5px;
+    padding-top: 1em;
+    box-shadow: 0px 2px 4px rgb(0 0 0 / 10%);
+    top: 37px;
+    right: 0px;
+    visibility: hidden;
+    transition: transform .2s;
+    min-width: 140px;
+  }
+
+  .emailMenu__text {
+    font-size: 1.2rem;
+    margin-right: .5em;
+  }
+
+  .emailListUl {
+    list-style-type: none;
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+
+  .emailListUl__item {
+    padding: 1.5em;
+    margin: 0 1em;
+    font-weight: bold;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+
+  .emailListUl__item:nth-child(2n) {
+    border-bottom: 1px solid $--background-color;
+    padding-bottom: 2em;
+  }
+}
+
+@media (min-width: 765px) {
+  .emailMenu__list {
+    top: 43px;
+  }
+}
+
+@media (min-width: 800px) {
+  .emailMenu__text {
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .emailMenu__text {
+    font-size: 1.5rem;
+  }
+}

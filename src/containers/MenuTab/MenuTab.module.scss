@@ -1,0 +1,74 @@
+@import '../../styles/variables.module';
+
+.menuTab {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  padding: 4em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  background-color: $--white;
+  transform: translateX(-100vw);
+  transition: transform .2s;
+}
+
+.menuTab__tittle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 2em;
+}
+
+.menuTab__logged {
+  border-bottom: none;
+}
+
+.menuTab__logged__item {
+  cursor: pointer;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.menuTab__email {
+  font-weight: 300;
+  display: block;
+}
+
+.menuActive {
+  transform: translateX(0);
+}
+
+.closeIcon {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  top: 14px;
+  right: 12px;
+  cursor: pointer;
+  fill: #C7C7C7;
+}
+
+.menuTab__logging {
+  font-weight: 500;
+  text-decoration: none;
+  color: $--hospital-green;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.menuTab__logging {
+  font-size: 1.2rem;
+  display: inline-block;
+  margin-bottom: .5em;
+}
+
+@media (min-width: 500px) {
+  .menuTab {
+    transform: translateX(-100vw);
+  }
+}

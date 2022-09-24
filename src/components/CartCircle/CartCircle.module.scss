@@ -1,0 +1,16 @@
+@import '../../styles/variables.module';
+
+.counterCircle {
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  right: 0px;
+  top: -5px;
+  background-color: $--hospital-green;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}

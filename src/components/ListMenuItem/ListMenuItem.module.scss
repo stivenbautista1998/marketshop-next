@@ -1,0 +1,43 @@
+@import '../../styles/variables.module';
+
+.menuTab__mainList__item {
+  cursor: pointer;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.menuTabSelectedItem {
+  border-left: 5px solid $--hospital-green;
+  padding-left: 1em;
+  border-radius: 2px;
+  color: $--hospital-green;
+}
+
+.selectedItemMobile, .selectedItemDesk {
+  border: 1px solid $--hospital-green;
+  border-radius: 10px;
+  padding: 0.5em 1em;
+  color: $--hospital-green;
+  font-weight: bold;
+}
+
+.headerHomeSection__listOption {
+  display: inline-block;
+  margin: 0 .5em;
+  cursor: pointer;
+}
+
+.headerHomeSection__listOption:first-child {
+  margin-left: 7em;
+}
+
+.headerHomeSection__listOption:first-child.selected { /* margin left when the first child is selected */
+  margin-left: 6em;
+}
+
+@media (min-width: 415px) {
+  .headerHomeSection__listOption:first-child.selected, .headerHomeSection__listOption:first-child {
+    margin-left: 0;
+  }
+}
