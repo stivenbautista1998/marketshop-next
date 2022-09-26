@@ -31,26 +31,6 @@
     margin-right: 0.5em;
 }
 
-.not-found-icon {
-    width: 250px;
-    display: block;
-    margin: 2em auto;
-}
-
 .arrow-down-icon {
     color: #cacaca;
-}
-
-
-@media (min-width: 415px) {
-    .not-found-icon {
-        width: 300px;
-        margin: 4em auto;
-    }
-}
-
-@media (min-width: 730px) {
-    .not-found-icon {
-        margin: 8em auto;
-    }
 }
