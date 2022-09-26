@@ -28,3 +28,23 @@
 .hideSection {
   display: none;
 }
+
+@media (min-width: 730px) {
+  .headerHomeSection__list {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 765px) {
+  .headerHomeSection__list {
+    display: inline-block;
+    width: auto;
+    margin-bottom: 0;
+    overflow: unset;
+    margin-left: 1.6em;
+  }
+
+  .hideOnDesk {
+    display: none;
+  }
+}

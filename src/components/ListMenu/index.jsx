@@ -6,7 +6,7 @@ const ListMenu = ({ mobile, menuTab, listInfo, render, children }) => {
   let isFrontTab;
 
   if(!menuTab) {
-    isFrontTab = `${styles.headerHomeSection__list} ${mobile ? '' : styles.hideSection}`;
+    isFrontTab = `${styles.headerHomeSection__list} ${mobile ? styles.hideOnDesk : styles.hideSection}`;
   }
 
   return (

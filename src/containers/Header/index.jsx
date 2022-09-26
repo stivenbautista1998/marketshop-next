@@ -132,7 +132,7 @@ class Header extends Component {
               />
             </div>
             <div className={`${styles.leftNav} ${ this.state.showLogoApp ? "" : styles.hideLogo }`}>
-              <IconApp />
+              <IconApp size={48} />
               <ListMenu
                 mobile={false}
                 menuTab={false}

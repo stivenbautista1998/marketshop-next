@@ -81,8 +81,9 @@
   cursor: pointer;
 }
 
-@media (min-width: 430px) {
-  .generalInput {
-    width: 100%;
+@media (min-width: 765px) {
+  .searchHomeSection {
+    top: 62px;
   }
 }
+
