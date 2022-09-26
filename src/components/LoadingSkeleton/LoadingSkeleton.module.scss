@@ -58,8 +58,23 @@
     height: 172px;
   }
 
+  .nameProduct {
+    max-width: 133px;
+  }
+
   .articleSectionItem {
     margin: 0 .5em;
     margin-bottom: 2em;
+  }
+}
+
+@media (min-width: 730px) {
+  .nameProduct {
+    max-width: 155px;
+  }
+
+    .newImg {
+    width: 208px;
+    height: 207px;
   }
 }

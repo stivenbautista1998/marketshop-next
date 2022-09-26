@@ -34,14 +34,6 @@ a.grey__message:hover, a.green__message:hover {
   margin-bottom: 5em;
 }
 
-.recovery-text {
-  margin: 1em auto;
-  margin-bottom: 2em;
-  font-size: 1.4rem;
-  width: 80%;
-  color: #797979;
-}
-
 .header-home-nav {
   display: flex;
   max-width: 1180px;
@@ -79,16 +71,6 @@ a.grey__message:hover, a.green__message:hover {
 
 .no-fixed {
   position: relative;
-}
-
-.menu-tab + .product-detail-tab {
-  /* height: 92vh; */
-  padding: 0;
-  transform: translateY(100vh);
-}
-
-.menu-tab + .show-product-detail {
-  transform: translateY(0);
 }
 
 .image-shopping-card {
@@ -148,122 +130,13 @@ a.grey__message:hover, a.green__message:hover {
   margin: 1.5em 0;
 }
 
-.product-detail-img {
-  width: 320px;
-  height: 320px;
-  margin: 0 auto;
-  border-bottom-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-}
-
-.image-detail-size {
-  width: 320px;
-  height: 320px;
-  scroll-snap-align: center;
-}
-
-.image-container {
-  position: relative;
-  overflow-x: scroll;
-  overscroll-behavior-x: contain;
-  scroll-snap-type: x proximity;
-}
-
-.product-detail-info {
-  padding: 0.8em 1.5em;
-}
-
-.product-detail-tab .recovery-text {
-  margin: 1em 0;
-  width: 100%;
-  max-height: 90px;
-}
-
-.product-detail-button {
-  text-align: center;
-  padding: 1.5em;
-}
-
-.product-detail-button__text {
-  font-size: 1.5rem;
-}
-
-.points-wrapper {
-  text-align: center;
-}
-
-.point {
-  width: 7px;
-  height: 7px;
-  background-color: $--background-color;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.selected-point {
-  background-color: $--hospital-green;
-}
-
-.wrapper-close-btn, .wrapper-back-btn, .wrapper-next-btn {
-  background-color: $--background-color;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  position: absolute;
-}
-
-.wrapper-close-btn {
-  top: 10px;
-  right: 8px;
-}
-
-.wrapper-next-btn, .wrapper-back-btn {
-  width: 24px;
-  height: 24px;
-  top: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.wrapper-next-btn {
-  right: 20px;
-}
-
-.wrapper-back-btn {
-  left: 20px;
-}
-
 .disabled-btn {
   background-color: #E7E7E7;
   border: none;
 }
 
-.error-detail-message {
-  width: fit-content;
-  font-size: 1.5rem;
-  font-weight: bold;
-  padding: .5em;
-  border-radius: 5px;
-  background-color: red;
-  color: $--white;
-  margin: 0 auto;
-  visibility: hidden;
-}
-
 .text-logo {
   font-weight: bold;
-}
-
-.error-app {
-  font-size: 1.5rem;
-  padding: 1.5em;
-  font-weight: bold;
-  border: 5px solid $--hospital-green;
-  color: #888;
-  border-radius: 5px;
-  background-color: $--text-input;
-  max-width: 250px;
 }
 
 .no-order {
@@ -275,16 +148,6 @@ a.grey__message:hover, a.green__message:hover {
   margin-top: 1em;
   font-weight: bold;
   color: #888;
-}
-
-.fade {
-  animation-name: fade;
-  animation-duration: 1.8s;
-}
-
-@keyframes fade {
-  from { opacity: .4 }
-  to { opacity: 1 }
 }
 
 @keyframes shake {
@@ -334,72 +197,33 @@ a.grey__message:hover, a.green__message:hover {
   }
 
   form > .general-input {
-      width: 100%;
+    width: 100%;
   }
 
   .myaccount-tittle {
-      width: 100%;
-      font-size: 2.5rem;
-      margin-bottom: 2em;
+    width: 100%;
+    font-size: 2.5rem;
+    margin-bottom: 2em;
   }
 
   .recovery-tittle {
-      font-size: 2.5rem;
+    font-size: 2.5rem;
   }
 }
 
 @media (min-width: 500px) {
   #body-home {
-      overflow: scroll;
+    overflow: scroll;
   }
 
   .menu-icon {
-      display: none;
-  }
-
-  .menu-tab + .product-detail-tab {
-      max-height: 680px;
-      top: 57px;
-      width: 365px;
-      right: 0;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0px 0px 10px rgb(0 0 0 / 12%);
-  }
-
-  .product-detail-img, .image-detail-size {
-      width: 360px;
-      height: 360px;
-      border-bottom-right-radius: 20px;
-      border-bottom-left-radius: 20px;
-  }
-
-  .error-app {
-      font-size: 1.8rem;
-      padding: 2em;
-      max-width: 380px;
-      margin-top: 1em;
-  }
-
-  .wrapper-next-btn, .wrapper-back-btn {
-      top: 168px;
+    display: none;
   }
 }
 
 
 @media (min-width: 765px) {
   .search-home-section {
-      top: 62px;
-  }
-
-  .menu-tab + .product-detail-tab {
-      top: 65px;
-  }
-
-  .error-app {
-      font-size: 2rem;
-      padding: 1em;
-      max-width: 500px;
-      margin-top: 2.5em;
+    top: 62px;
   }
 }

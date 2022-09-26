@@ -1,0 +1,30 @@
+@import '../../styles/variables.module';
+
+.errorApp {
+  font-size: 1.5rem;
+  padding: 1.5em;
+  font-weight: bold;
+  border: 5px solid $--hospital-green;
+  color: #888;
+  border-radius: 5px;
+  background-color: $--text-input;
+  max-width: 250px;
+}
+
+@media (min-width: 500px) {
+  .errorApp {
+    font-size: 1.8rem;
+    padding: 2em;
+    max-width: 380px;
+    margin-top: 1em;
+  }
+}
+
+@media (min-width: 765px) {
+  .errorApp {
+    font-size: 2rem;
+    padding: 1em;
+    max-width: 500px;
+    margin-top: 2.5em;
+  }
+}

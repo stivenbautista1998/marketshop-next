@@ -1,0 +1,255 @@
+@import '../../styles/variables.module';
+
+.newImg {
+  width: 138px;
+  height: 137px;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  background-size: cover;
+  background-color: #CCC;
+}
+
+.imageDetailSize {
+  width: 320px;
+  height: 320px;
+  scroll-snap-align: center;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.8s;
+}
+
+.pointsWrapper {
+  text-align: center;
+}
+
+.point {
+  width: 7px;
+  height: 7px;
+  background-color: $--background-color;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.selectedPoint {
+  background-color: $--hospital-green;
+}
+
+.productDetailTab {
+  position: fixed;
+  width: 100vw;
+  height: 92.9vh; /* 1px left for border of nav */
+  padding: 1.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: $--white;
+  z-index: 8;
+  bottom: 0;
+  transform: translateX(100vw);
+  transition: transform .2s;
+}
+
+/* .menu-tab +  */.productDetailTab {
+  /* height: 92vh; */
+  padding: 0;
+  transform: translateY(100vh);
+}
+
+.showProductDetail {
+  transform: translateY(0);
+}
+
+@keyframes fade {
+  from { opacity: .4 }
+  to { opacity: 1 }
+}
+
+.imageContainer {
+  position: relative;
+  overflow-x: scroll;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+}
+
+.productDetailImg {
+  width: 320px;
+  height: 320px;
+  margin: 0 auto;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.productDetailInfo {
+  padding: 0.8em 1.5em;
+}
+
+.wrapperCloseBtn, .wrapperBackBtn, .wrapperNextBtn {
+  background-color: $--background-color;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.wrapperNextBtn, .wrapperBackBtn {
+  width: 24px;
+  height: 24px;
+  top: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.productDetailButton {
+  text-align: center;
+  padding: 1.5em;
+}
+
+.productDetailButton__text {
+  font-size: 1.5rem;
+}
+
+.wrapperCloseBtn {
+  top: 10px;
+  right: 8px;
+}
+
+.wrapperNextBtn {
+  right: 20px;
+}
+
+.wrapperBackBtn {
+  left: 20px;
+}
+
+.arrowIcon {
+  width: 15px;
+  height: 15px;
+  fill: #C7C7C7;
+  cursor: pointer;
+}
+
+.backIcon {
+  transform: rotate(180deg);
+}
+
+.closeIcon {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  top: 14px;
+  right: 12px;
+  cursor: pointer;
+  fill: #C7C7C7;
+}
+
+.nameProduct, .priceProduct {
+  margin-top: 0.4em;
+  display: block;
+}
+
+.priceProduct {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #404040;
+  width: 100%;
+}
+
+.recoveryText {
+  margin: 1em 0;
+  width: 100%;
+  max-height: 90px;
+  font-size: 1.4rem;
+  color: #797979;
+}
+
+.errorDetailMessage {
+  width: fit-content;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: .5em;
+  border-radius: 5px;
+  background-color: red;
+  color: $--white;
+  margin: 0 auto;
+  visibility: hidden;
+}
+
+.showDetailErrorMessage {
+  visibility: visible;
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+}
+
+.generalButton {
+  width: 90%;
+  min-width: 288px;
+  padding: 1em;
+  border-radius: 10px;
+  font-size: 1.4rem;
+  border: 1px solid $--hospital-green;
+  cursor: pointer;
+}
+
+.greenBtn:disabled {
+  background-color: #CCC;
+}
+
+.greenBtn {
+  background-color: $--hospital-green;
+  color: $--white;
+  margin-bottom: 3em;
+  margin-top: 2em;
+}
+
+.greenBtn {
+  margin-top: 2em;
+}
+
+.normalSize {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  margin-right: 0.5em;
+}
+
+@media (min-width: 430px) {
+  .generalButton {
+    width: 100%;
+  }
+}
+
+@media (min-width: 500px) {
+  .productDetailImg, .imageDetailSize {
+    width: 360px;
+    height: 360px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+
+  /* .menu-tab +  */.productDetailTab {
+    max-height: 680px;
+    top: 57px;
+    width: 365px;
+    right: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgb(0 0 0 / 12%);
+  }
+
+  .wrapperNextBtn, .wrapperBackBtn {
+    top: 168px;
+  }
+}
+
+@media (min-width: 765px) {
+  /* .menu-tab +  */.productDetailTab {
+    top: 65px;
+  }
+}
+
