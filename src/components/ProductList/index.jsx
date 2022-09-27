@@ -39,9 +39,8 @@ const ProductList = ({ products, setProductDetailTab, loadingProducts, productEr
       <div className={styles.notFoundIcon}>
         <Image
           src={notFoundImg}
-          width={250}
-          height={250}
-          objectFit="fill"
+          layout='fill' /* this way the image covers the container's size, parent should be relative */
+          objectFit='contain'
           alt="Product not found."
         />
       </div> :

@@ -53,7 +53,11 @@
 }
 
 .add_to_card {
-  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-top: 0.2em;
+  cursor: pointer;
+  z-index: 2;
 }
 
 .circleBorder {
@@ -62,7 +66,7 @@
   border-radius: 50%;
   padding: 17px;
   right: 3px;
-  top: 3px;
+  top: 5px;
 }
 
 .newImg {

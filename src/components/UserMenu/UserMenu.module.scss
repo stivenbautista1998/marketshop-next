@@ -4,10 +4,6 @@
   display: none;
 }
 
-.showSection {
-  visibility: visible;
-}
-
 .styleNoLink {
   text-decoration: none;
   color: $--black;
@@ -76,6 +72,10 @@
   .emailListUl__item:nth-child(2n) {
     border-bottom: 1px solid $--background-color;
     padding-bottom: 2em;
+  }
+
+  .showSection {
+    visibility: visible;
   }
 }
 

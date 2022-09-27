@@ -136,6 +136,9 @@
     align-items: center;
   }
 
+  .frontContainer {
+    display: none;
+  }
 }
 
 @media not all and (min-resolution:.001dpcm) {

@@ -11,9 +11,8 @@ const NoProductSelected = () => (
   <div className={styles.noShopIcon}>
     <Image
       src={noShopSvg}
-      width={40}
-      height={40}
-      objectFit="fill"
+      layout='fill' /* this way the image covers the container's size, parent should be relative */
+      objectFit='contain'
       alt="image of shopping car"
     />
   </div>
