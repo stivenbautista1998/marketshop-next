@@ -1,8 +1,6 @@
-@import '../../styles/variables.module';
-
 .syncAlertWrapper {
     border: 2px solid rgb(196, 176, 151);
-    padding: 1em;
+    padding: 2em;
     background-color: bisque;
     border-radius: 5px;
     width: 300px;
@@ -10,7 +8,7 @@
 }
 
 .syncAlertText {
-    font-size: var(--size-normal);
+    font-size: 1.4rem;
     font-weight: bold;
     margin-bottom: 0.5em;
 }
@@ -18,7 +16,7 @@
 .syncAlertWrapperButton {
     border: 1px solid;
     padding: .5em;
-    background-color: var(--soft-blue);
+    background-color: #3498DB;
     color: #FFF;
     border-radius: 5px;
     cursor: pointer;
@@ -26,8 +24,6 @@
     align-items: center;
 }
 
-.refreshIcon {
-  width: 18px;
-  height: 18px;
+.refreshText {
   margin-left: 0.3em;
 }

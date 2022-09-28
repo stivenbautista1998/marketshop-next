@@ -1,11 +1,16 @@
-import React from 'react';
-import { Navigate } from 'react-router-dom';
+import { useContext } from 'react'
+import { AuthContext } from "@context/AuthContext";
+import { useRouter } from 'next/router';
 
-const LoginProtectedRoute = ({ currentUser, children }) => {
+
+const LoginProtectedRoute = ({ children }) => {
+  const { currentUser } = useContext(AuthContext);
+  const router = useRouter();
     // if the user already is logged in, then instead of going to login, go to home.
-    if(currentUser) {
-        return <Navigate to="/" />
+    if(currentUser !== null) {
+      router.push("/");
     }
+
     return children;
 };
 

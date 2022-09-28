@@ -33,7 +33,7 @@ function RouteGuard({ children }) {
     // redirect to login page if accessing a private page and not logged in
     const publicPaths = ['/login'];
     const path = url.split('?')[0];
-    if (currentUser !== null && !publicPaths.includes(path)) {
+    if (currentUser === null && !publicPaths.includes(path)) {
       setAuthorized(false);
       router.push({
         pathname: '/login',

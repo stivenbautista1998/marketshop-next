@@ -1,7 +1,12 @@
 import { Login } from '@templates/Login';
+import { LoginProtectedRoute } from '@components/LoginProtectedRoute';
 
 function LoginPage() {
-  return <Login />;
+  return (
+    <LoginProtectedRoute>
+      <Login />
+    </LoginProtectedRoute>
+  );
 }
 
 export default LoginPage;
