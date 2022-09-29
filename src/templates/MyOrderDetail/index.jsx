@@ -1,19 +1,20 @@
 import { useContext } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+// import { useRouter } from 'next/router';
 import { ProductOrdered } from '@components/ProductOrdered';
 import { JustIcon } from '@components/JustIcon';
-import AppContext from '../context/AppContext';
+import AppContext from '../../context/AppContext';
 
 import menuSvg from "@icons/menu-icon.svg";
 import shoppingCartSvg from "@icons/shopping-cart.svg";
+import styles from './MyOrderDetail.module.scss';
 
 const MyOrderDetail = () => {
   const { totalSelectedProducts } = useContext(AppContext);
-  const route = useRouter();
+  /* const route = useRouter();
   const state = route.query;
-  console.log(state);
+  console.log(state); */
 
   return (
     <div className="wrapper-login">
@@ -30,7 +31,7 @@ const MyOrderDetail = () => {
               </div>
                 <Link className="style-no-link" href="/">
                     <h2 className="front-container">
-                        <JustIcon /* responsiveSize={true} */ />
+                        <JustIcon />
                         My order
                     </h2>
                 </Link>

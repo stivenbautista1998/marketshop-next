@@ -23,11 +23,11 @@ const MyOrder = ({ orderInfo, totalOrdered }) => {
         <span className={styles.priceProduct}>{totalOrdered()}</span>
         <div className={`${styles.closeIcon} ${styles.closeItem}`} onClick={showDetails}>
           <Link
-            href={{ pathname: `/my-order/${orderInfo.id}`, query: orderInfo }}
+            /* href={{ pathname: `/my-order/${orderInfo.id}`, query: orderInfo }} */
+            href={`/my-order/${orderInfo.id}`}
           >
             <Image
               src={arrowRightSvg}
-              /* className="close-icon close-item" */
               width={15}
               height={15}
               objectFit="fill"

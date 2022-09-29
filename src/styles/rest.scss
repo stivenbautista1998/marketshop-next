@@ -34,10 +34,6 @@ a.grey__message:hover, a.green__message:hover {
   margin-bottom: 5em;
 }
 
-.box-shadow-header {
-  box-shadow: 0px 2px 4px rgb(0 0 0 / 5%);
-}
-
 .image-product {
   width: 138px;
   height: 137px;
@@ -52,29 +48,12 @@ a.grey__message:hover, a.green__message:hover {
   top: 5px;
 }
 
-.myaccount-tittle {
-  text-align: left;
-  width: 90%;
-  margin: 0 auto;
-  margin-top: 2em;
-  margin-bottom: 3em;
-}
-
-.no-fixed {
-  position: relative;
-}
-
 .image-shopping-card {
   width: 69px;
 }
 
 .no-underline {
   text-decoration: none;
-}
-
-.main-my-account .loginSection__input {
-  padding-left: 0;
-  background-color: $--white;
 }
 
 .header-my-order {
@@ -120,24 +99,12 @@ a.grey__message:hover, a.green__message:hover {
       align-items: unset;
   }
 
-  .wrapper-recovery, .main-my-account {
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 400px;
-  }
-
   .main-my-account .green--btn, .section-down .white--btn, .section-down .green--btn {
       width: 400px;
   }
 
   form > .general-input {
     width: 100%;
-  }
-
-  .myaccount-tittle {
-    width: 100%;
-    font-size: 2.5rem;
-    margin-bottom: 2em;
   }
 
   .recovery-tittle {

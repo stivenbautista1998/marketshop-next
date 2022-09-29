@@ -1,0 +1,188 @@
+
+
+.wrapperLogin {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.boxShadowHeader {
+  box-shadow: 0px 2px 4px rgb(0 0 0 / 5%);
+}
+
+.headerHomeNav {
+  display: flex;
+  max-width: 1180px;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6em 1.2em;
+}
+
+.noFixed {
+  position: relative;
+}
+
+.menuIcon {
+  width: 25px;
+  height: 21px;
+  cursor: pointer;
+}
+
+.styleNoLink {
+  text-decoration: none;
+  color: #000;
+}
+
+.shoppingCart {
+  width: 25px;
+  height: 21px;
+  cursor: pointer;
+}
+
+.mainMyAccount {
+  position: relative;
+  text-align: center;
+}
+
+.myAccountTittle {
+  text-align: left;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 2em;
+  margin-bottom: 3em;
+}
+
+.loginSection__label {
+  float: left;
+  margin-left: 1.5em;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+
+.redLetters {
+  color: red;
+}
+
+.generalInput {
+  width: 90%;
+  background-color: #F7F7F7;
+  color: #797979;
+  font-size: 1.4rem;
+  font-weight: 400;
+  padding: 0.8em 0.7em;
+  border-radius: 7px;
+  border: none;
+}
+
+.generalInput:-webkit-autofill,
+.generalInput:-webkit-autofill:hover,
+.generalInput:-webkit-autofill:focus,
+.generalInput:-webkit-autofill:active  {
+  box-shadow: 0 0 0 30px #F7F7F7 inset;
+}
+
+.generalInput:focus-visible {
+  outline: none;
+}
+
+.loginSection__input {
+  margin-bottom: 1em;
+}
+
+.loginSection__input[type="password"] {
+  margin-bottom: 1.5em;
+}
+
+.loginSection__input {
+  padding-left: 0;
+  background-color: #FFF;
+}
+
+.redBorders {
+  border: 1px solid red;
+}
+
+.errorMessage {
+  position: absolute;
+  color: #D25050;
+  font-size: 1.1rem;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  visibility: hidden;
+  background-color: red;
+  max-width: 250px;
+  padding: 0.2em 0.5em;
+  color: #FFF;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.showDetailErrorMessage {
+  visibility: visible;
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+}
+
+.sectionDown {
+  width: 100%;
+  text-align: center;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+@media (min-width: 430px) {
+  .mainMyAccount {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 400px;
+  }
+
+  .myAccountTittle {
+    width: 100%;
+    font-size: 2.5rem;
+    margin-bottom: 2em;
+  }
+
+  form > .loginSection__label {
+    margin-left: 0;
+    font-size: 1.4em;
+  }
+
+  .generalInput {
+    width: 100%;
+  }
+
+  .wrapperLogin {
+    justify-content: unset;
+    align-items: unset;
+  }
+}
+
+@media (min-width: 500px) {
+  .menuIcon {
+    display: none;
+  }
+}
