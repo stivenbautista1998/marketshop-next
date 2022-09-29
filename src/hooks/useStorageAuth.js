@@ -5,7 +5,7 @@ const useStorageAuth = (nameItem, nameCurrentItem, initialValue) => {
   const [ loadingUsersInfo, setLoadingUsersInfo ] = useState(true);
   const [ errorUsersInfo, setErrorUsersInfo ] = useState(false);
 
-  const [ currentUser, setCurrentUser ] = useState(null);
+  const [ currentUser, setCurrentUser ] = useState(undefined); // added to test
   const [ loadingCurrentUser, setLoadingCurrentUser ] = useState(true);
   const [ errorCurrentUser, setErrorCurrentUser ] = useState(false);
 

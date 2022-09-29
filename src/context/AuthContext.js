@@ -21,6 +21,5 @@ export { AuthContext, AuthContextProvider };
   validateUser,
   addNewUser,
   editCurrentUserInfo,
-  syncAuth,
-  synchronizeCurrentUser
+  syncAuth
 } */

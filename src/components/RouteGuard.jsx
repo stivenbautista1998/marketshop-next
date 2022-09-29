@@ -30,6 +30,8 @@ function RouteGuard({ children }) {
 
   function authCheck(url) {
     console.log({ url });
+    console.log({ currentUser });
+
     // redirect to login page if accessing a private page and not logged in
     const publicPaths = ['/login'];
     const path = url.split('?')[0];
@@ -44,20 +46,12 @@ function RouteGuard({ children }) {
     }
   }
 
+  // it will enter here when the localStorage info (currentUser) is still not loaded.
+  if(currentUser === "undefined") return <h2>Loading...</h2>;
+
+  // it will enter here when the info currentUser is obtained, therefore authorized is defined.
   console.log({ authorized });
   return (authorized && children);
 }
 
-/* const ProtectedRoute = ({ children }) => {
-  const router = useRouter();
-  const { currentUser } = useContext(AuthContext);
-
-  if(!currentUser) {
-    // user is not authenticated
-    router.push("/login");
-  }
-  // user is authenticated
-  return children;
-}; */
-
-export { /* ProtectedRoute, */ RouteGuard };
+export { RouteGuard };

@@ -21,9 +21,6 @@ const useAuth = () => {
         synchronizeCurrentUser
     } = useStorageAuth("USERS_V1", "CURRENT_USER_V1", defaultUser);
 
-    console.log({ userInfo });
-    console.log({ currentUser });
-
     useEffect(() => {
         // synchronizing the global users state with the currently updated logged user info.
         const updatedUserInfo = userInfo.map((item) => {
@@ -71,8 +68,6 @@ const useAuth = () => {
 
         return authentic;
     };
-
-    console.log({ validateUser });
 
     const editCurrentUserInfo = ( editedUserInfo ) => {
         setCurrentUser({

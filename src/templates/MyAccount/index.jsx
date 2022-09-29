@@ -12,7 +12,7 @@ import shoppingCartSvg from "@icons/shopping-cart.svg";
 
 const activeField = { backgroundColor: "rgb(247, 247, 247)", paddingLeft: "0.7em" }
 
-const MyAccount = ({ currentUser, editCurrentUserInfo, validateUser, syncAuth, synchronizeCurrentUser }) => {
+const MyAccount = ({ currentUser, editCurrentUserInfo, validateUser, syncAuth }) => {
     const {
         isEditable,
         userName,
@@ -127,8 +127,7 @@ const MyAccount = ({ currentUser, editCurrentUserInfo, validateUser, syncAuth, s
               />
           </div>
           <SyncAlertWithProps
-              synchronize={setSyncOfCurrentUser}
-              synchronizeCurrentUser={synchronizeCurrentUser}
+            synchronize={setSyncOfCurrentUser}
           />
       </div>
     );

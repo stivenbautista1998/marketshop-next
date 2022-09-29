@@ -6,8 +6,7 @@ import { RouteGuard } from "@components/RouteGuard";
 export default function HomeApp() {
   const {
     currentUser,
-    setCurrentUser,
-    synchronizeCurrentUser
+    setCurrentUser
   } = useContext(AuthContext);
 
   return (
@@ -15,9 +14,8 @@ export default function HomeApp() {
       <Home
         currentUser={currentUser}
         setCurrentUser={setCurrentUser}
-        synchronizeCurrentUser={synchronizeCurrentUser}
       />
     </RouteGuard>
   )
 }
-//
+

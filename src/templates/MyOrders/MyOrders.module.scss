@@ -1,0 +1,71 @@
+@import '../../styles/variables.module';
+
+.wrapperLogin {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerMyOrders {
+  width: 100%;
+  box-shadow: 0px 2px 4px rgb(0 0 0 / 5%);
+}
+
+.headerHomeNav {
+  display: flex;
+  max-width: 1180px;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6em 1.2em;
+}
+
+.navMyOrders {
+  position: static;
+}
+
+.menuIcon {
+  width: 25px;
+  height: 21px;
+  cursor: pointer;
+}
+
+.styleNoLink {
+  text-decoration: none;
+  color: $--black;
+}
+
+.shoppingCart {
+  width: 25px;
+  height: 21px;
+  cursor: pointer;
+}
+
+.myOrderSection {
+  width: 100%;
+  height: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 2em;
+}
+
+.frontContainer {
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 430px) {
+  .wrapperLogin {
+      justify-content: unset;
+      align-items: unset;
+  }
+}
+
+@media (min-width: 500px) {
+  .menuIcon {
+    display: none;
+  }
+}

@@ -10,7 +10,7 @@ import { useProducts } from '@hooks/useProducts';
 import { useNavList } from "./hooks/useNavList";
 import { useHome } from "./hooks/useHome";
 
-const Home = ({ currentUser, setCurrentUser, synchronizeCurrentUser }) => {
+const Home = ({ currentUser, setCurrentUser }) => {
 
   const {
     showMenuTab,
@@ -93,7 +93,6 @@ const Home = ({ currentUser, setCurrentUser, synchronizeCurrentUser }) => {
 
       <SyncAlertWithProps
         synchronize={setSyncOfCurrentUser}
-        synchronizeCurrentUser={synchronizeCurrentUser}
       />
     </section>
   );

@@ -1,0 +1,68 @@
+.shoppingCardItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5em;
+  transition: transform .3s;
+}
+
+.myOrders__itemSpecial {
+  background-color: #F7F7F7;
+  padding: 1.5em;
+  border-radius: 10px;
+  margin: 1.5em 0;
+}
+
+.backContainer {
+  display: flex;
+  align-items: center;
+}
+
+.myOrders__item__date {
+  display: block;
+  margin-top: 0;
+  margin-bottom: .3em;
+}
+
+.nameProduct, .priceProduct {
+  margin-top: 0.4em;
+  display: block;
+}
+
+.priceProduct {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #404040;
+  width: 100%;
+}
+
+.priceProduct {
+  margin-top: 0;
+}
+
+.myOrders__item__amount {
+  display: block;
+  margin-top: 0;
+  margin-bottom: .3em;
+  font-size: 1.2rem;
+  font-weight: thin;
+  color: #404040;
+}
+
+.closeIcon {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  top: 14px;
+  right: 12px;
+  cursor: pointer;
+  fill: #c7c7c7;
+}
+
+.closeItem {
+  position: static;
+  display: flex;
+  margin-left: 1em;
+}
+
