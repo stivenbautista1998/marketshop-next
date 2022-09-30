@@ -64,10 +64,6 @@
   margin-bottom: 0.5em;
 }
 
-.redLetters {
-  color: red;
-}
-
 .generalInput {
   width: 90%;
   background-color: #F7F7F7;
@@ -103,10 +99,6 @@
   background-color: #FFF;
 }
 
-.redBorders {
-  border: 1px solid red;
-}
-
 .errorMessage {
   position: absolute;
   color: #D25050;
@@ -133,6 +125,14 @@
 .sectionDown {
   width: 100%;
   text-align: center;
+}
+
+.redLetters {
+  color: red;
+}
+
+.redBorders {
+  border: 1px solid red;
 }
 
 @keyframes shake {

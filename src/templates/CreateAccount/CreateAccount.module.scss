@@ -1,8 +1,47 @@
-@import '../../styles/variables.module';
 
-.loginSection, .wrapper-recovery, .main-my-account {
+
+.wrapperLogin {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.boxShadowHeader {
+  box-shadow: 0px 2px 4px rgb(0 0 0 / 5%);
+}
+
+.headerHomeNav {
+  display: flex;
+  max-width: 1180px;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6em 1.2em;
+}
+
+.menuIcon {
+  width: 25px;
+  height: 21px;
+  cursor: pointer;
+}
+
+.shoppingCart {
+  width: 25px;
+  height: 21px;
+  cursor: pointer;
+}
+
+.loginSection {
   text-align: center;
 }
+
+.noUnderline {
+  text-decoration: none;
+}
+
 
 .loginSection__input {
   margin-bottom: 1em;
@@ -10,7 +49,7 @@
 
 .generalInput {
   width: 90%;
-  background-color: $--text-input;
+  background-color: #F7F7F7;
   color: #797979;
   font-size: 1.4rem;
   font-weight: 400;
@@ -23,7 +62,7 @@
 .generalInput:-webkit-autofill:hover,
 .generalInput:-webkit-autofill:focus,
 .generalInput:-webkit-autofill:active  {
-  box-shadow: 0 0 0 30px $--text-input inset;
+  box-shadow: 0 0 0 30px #F7F7F7 inset;
 }
 
 .generalInput:focus-visible {
@@ -42,7 +81,7 @@
   background-color: red;
   max-width: 250px;
   padding: 0.2em 0.5em;
-  color: $--white;
+  color: #FFF;
   border-radius: 5px;
   font-weight: bold;
 }
@@ -78,28 +117,6 @@
   margin-top: 3em;
 }
 
-.green__message {
-  margin-left: .5em;
-  color: $--hospital-green;
-}
-
-.grey__message {
-  color: #797979;
-}
-
-a.grey__message:hover, a.green__message:hover {
-  text-decoration: underline;
-  color: $--soft-blue;
-}
-
-.loginSection__recovery {
-  margin-bottom: 2em;
-}
-
-.loginSection, .main-my-account {
-  position: relative;
-}
-
 .loginSection__label {
   float: left;
   margin-left: 1.5em;
@@ -121,7 +138,20 @@ a.grey__message:hover, a.green__message:hover {
   width: 400px;
 }
 
-.loginSection, .headerSectionLogin, .wrapper-recovery {
+.noFixed {
+  position: relative;
+}
+
+.myAccountTittle {
+  text-align: left;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 2em;
+  margin-bottom: 3em;
+}
+
+.sectionDown {
+  width: 100%;
   text-align: center;
 }
 
@@ -134,7 +164,11 @@ a.grey__message:hover, a.green__message:hover {
 }
 
 @media (min-width: 430px) {
-  form > .loginSection__label {
+  form>.generalInput {
+      width: 100%;
+  }
+
+  form>.loginSection__label {
     margin-left: 0;
     font-size: 1.4em;
   }
@@ -145,7 +179,20 @@ a.grey__message:hover, a.green__message:hover {
     max-width: 400px;
   }
 
-  .generalInput {
+  .myAccountTittle {
     width: 100%;
+    font-size: 2.5rem;
+    margin-bottom: 2em;
+  }
+
+  .wrapperLogin {
+    justify-content: unset;
+    align-items: unset;
+  }
+}
+
+@media (min-width: 500px) {
+  .menuIcon {
+    display: none;
   }
 }

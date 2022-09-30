@@ -6,103 +6,106 @@ import { useCreateAccount } from './hooks/useCreateAccount';
 
 import menuSvg from "@icons/menu-icon.svg";
 import shoppingCartSvg from "@icons/shopping-cart.svg";
+import styles from './CreateAccount.module.scss';
 
-const CreateAccount = ({ validateUser, addNewUser }) => {
-    const {
-        formRef,
-        showPassConfirm,
-        passwordValue,
-        checkNewAccount,
-        onChangeHandler,
-        errorState
-    } = useCreateAccount(validateUser, addNewUser);
+const CreateAccount = () => {
+  const {
+    formRef,
+    showPassConfirm,
+    passwordValue,
+    checkNewAccount,
+    onChangeHandler,
+    errorState
+  } = useCreateAccount();
 
-    return (
-      <div className="wrapper-login">
-          <div className="section-up">
-              <header className="box-shadow-header">
-                  <nav className="header-home-nav no-fixed">
-                      <div className="menu-icon">
-                        <Image
-                          src={menuSvg}
-                          width={25}
-                          height={21}
-                          objectFit="fill"
-                          alt="menu icon"
-                        />
-                      </div>
-                      <Link className="no-underline" href="/login">
-                        <IconApp />
-                      </Link>
-                      <div className="shopping-cart">
-                        <Image
-                          src={shoppingCartSvg}
-                          width={25}
-                          height={21}
-                          objectFit="fill"
-                          alt="icon of a shopping cart"
-                        />
-                      </div>
-                  </nav>
-              </header>
-              <form id="create-account-form" className="login-section" action="/login" ref={formRef}>
-                  <h2 className="myaccount-tittle">Create Account</h2>
-                  <label className={`login-section__label ${ errorState.username.error ? "red-letters" : "" }`}
-                      htmlFor="name-txt">
-                      { errorState.username.text !== "" ? errorState.username.text : "Username" }
-                  </label>
-                  <input className={`general-input login-section__input ${ errorState.username.error ? "red-borders" : "" }`}
-                      onChange={onChangeHandler}
-                      name="username-txt"
-                      placeholder="UserExample"
-                      type="text"
-                  />
-                  <label className={`login-section__label ${ errorState.email.error ? "red-letters" : "" }`}
-                      htmlFor="email-txt">
-                      { errorState.email.text !== "" ? errorState.email.text : "Email address" }
-                  </label>
-                  <input className={`general-input login-section__input ${ errorState.email.error ? "red-borders" : "" }`}
-                      onChange={onChangeHandler}
-                      name="email-txt"
-                      placeholder="example@gmail.com"
-                      type="text"
-                  />
-                  <label className={`login-section__label ${ errorState.pass.error ? "red-letters" : "" }`}
-                      htmlFor="password-txt">
-                      { errorState.pass.text !== "" ? errorState.pass.text : "Password" }
-                  </label>
-                  <input className={`general-input login-section__input ${ errorState.pass.error ? "red-borders" : "" }`}
-                      onChange={onChangeHandler}
-                      value={passwordValue}
-                      name="password-txt"
-                      type="password"
-                  />
-                  <label style={ showPassConfirm ? null : { display: "none" } }
-                      className={`login-section__label ${ errorState.passConfirm.error ? "red-letters" : "" }`}
-                      htmlFor="repeat-password-txt">
-                      { errorState.passConfirm.text !== "" ? errorState.passConfirm.text : "Repeat Password" }
-                  </label>
-                  <input style={ showPassConfirm ? null : { display: "none" } }
-                      className={`general-input login-section__input ${ errorState.passConfirm.error ? "red-borders" : "" }`}
-                      onChange={onChangeHandler}
-                      name="repeat-password-txt"
-                      type="password"
-                  />
-                  <div
-                      className={`error-message ${ errorState.errorMessage !== "" ? "show-detail-error-message" : "" }`}>
-                      { errorState.errorMessage !== "" ? errorState.errorMessage : "" }
-                  </div>
-              </form>
-          </div>
-          <div className="section-down">
-              <GeneralButton
-                  buttonText="Create"
-                  color="green"
-                  clickHandler={checkNewAccount}
+  console.log("The result: " + errorState.passConfirm.error);
+
+  return (
+    <div className={styles.wrapperLogin}>
+      <div className="section-up">
+        <header className={styles.boxShadowHeader}>
+          <nav className={`${styles.headerHomeNav} ${styles.noFixed}`}>
+            <div className={styles.menuIcon}>
+              <Image
+                src={menuSvg}
+                width={25}
+                height={21}
+                objectFit="fill"
+                alt="menu icon"
               />
+            </div>
+            <Link className={styles.noUnderline} href="/login">
+              <IconApp size={48} redirect="/login" />
+            </Link>
+            <div className={styles.shoppingCart}>
+              <Image
+                src={shoppingCartSvg}
+                width={25}
+                height={21}
+                objectFit="fill"
+                alt="icon of a shopping cart"
+              />
+            </div>
+          </nav>
+        </header>
+        <form id='create-account-form' className={styles.loginSection} action="/login" ref={formRef}>
+          <h2 className={styles.myAccountTittle}>Create Account</h2>
+          <label className={`${styles.loginSection__label} ${ errorState.username.error ? styles.redLetters : "" }`}
+            htmlFor="name-txt">
+            { errorState.username.text !== "" ? errorState.username.text : "Username" }
+          </label>
+          <input className={`${styles.generalInput} ${styles.loginSection__input} ${ errorState.username.error ? styles.redBorders : "" }`}
+            onChange={onChangeHandler}
+            name="username-txt"
+            placeholder="UserExample"
+            type="text"
+          />
+          <label className={`${styles.loginSection__label} ${ errorState.email.error ? styles.redLetters : "" }`}
+            htmlFor="email-txt">
+            { errorState.email.text !== "" ? errorState.email.text : "Email address" }
+          </label>
+          <input className={`${styles.generalInput} ${styles.loginSection__input} ${ errorState.email.error ? styles.redBorders : "" }`}
+            onChange={onChangeHandler}
+            name="email-txt"
+            placeholder="example@gmail.com"
+            type="text"
+          />
+          <label className={`${styles.loginSection__label} ${ errorState.pass.error ? styles.redLetters : "" }`}
+            htmlFor="password-txt">
+            { errorState.pass.text !== "" ? errorState.pass.text : "Password" }
+          </label>
+          <input className={`${styles.generalInput} ${styles.loginSection__input} ${ errorState.pass.error ? styles.redBorders : "" }`}
+            onChange={onChangeHandler}
+            value={passwordValue}
+            name="password-txt"
+            type="password"
+          />
+          <label style={ showPassConfirm ? null : { display: "none" } }
+            className={`${styles.loginSection__label} ${ errorState.passConfirm.error ? styles.redLetters : "" }`}
+            htmlFor="repeat-password-txt">
+            { errorState.passConfirm.text !== "" ? errorState.passConfirm.text : "Repeat Password" }
+          </label>
+          <input style={ showPassConfirm ? null : { display: "none" } }
+            className={`${styles.generalInput} ${styles.loginSection__input} ${ errorState.passConfirm.error ? styles.redBorders : "" }`}
+            onChange={onChangeHandler}
+            name="repeat-password-txt"
+            type="password"
+          />
+          <div
+            className={`${styles.errorMessage} ${ errorState.errorMessage !== "" ? styles.showDetailErrorMessage : "" }`}>
+            { errorState.errorMessage !== "" ? errorState.errorMessage : "" }
           </div>
+        </form>
       </div>
-    );
+      <div className={styles.sectionDown}>
+        <GeneralButton
+          buttonText="Create"
+          color="green"
+          clickHandler={checkNewAccount}
+        />
+      </div>
+    </div>
+  );
 }
 
 export { CreateAccount };

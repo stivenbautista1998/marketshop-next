@@ -7,9 +7,7 @@ const LoginProtectedRoute = ({ children }) => {
   const { currentUser } = useContext(AuthContext);
   const router = useRouter();
     // if the user already is logged in, then instead of going to login, go to home.
-    if(currentUser !== null) {
-      router.push("/");
-    }
+    if((currentUser !== null) && (currentUser !== undefined)) router.push("/");
 
     return children;
 };
