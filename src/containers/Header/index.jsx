@@ -38,7 +38,7 @@ class Header extends Component {
   }
 
   handleHomeList(event) {
-    if((event.target.classList[1] !== "selected-item-desk") && (event.target.classList[1] !== "selected-item-mobile")) {
+    if(!event.target.classList[1]) { // if the second class which is selected-item does not exist.
       const itemToSelect = event.target.innerText.toLowerCase();
       const idCategory = this.props.updateList(itemToSelect);
       this.props.updateProducts(idCategory);

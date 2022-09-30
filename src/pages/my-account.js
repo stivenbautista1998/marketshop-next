@@ -10,11 +10,3 @@ const myAccount = () => {
 };
 
 export default myAccount;
-
-/*
-currentUser={currentUser}
-editCurrentUserInfo={editCurrentUserInfo}
-validateUser={validateUser}
-syncAuth={syncAuth}
-synchronizeCurrentUser={synchronizeCurrentUser}
-*/

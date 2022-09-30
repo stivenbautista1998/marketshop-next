@@ -15,7 +15,7 @@ import styles from './MyAccount.module.scss';
 const activeField = { backgroundColor: "rgb(247, 247, 247)", paddingLeft: "0.7em" }
 
 const MyAccount = () => {
-  const { currentUser, editCurrentUserInfo, validateUser, syncAuth } = useContext(AuthContext);
+  const { syncAuth } = useContext(AuthContext);
   const {
     isEditable,
     userName,
@@ -27,7 +27,7 @@ const MyAccount = () => {
     editAccount,
     syncUserData,
     errorState
-  } = useMyAccount(currentUser, editCurrentUserInfo, validateUser);
+  } = useMyAccount();
 
   const { setSyncOfCurrentUser } = useContext(AppContext);
 
@@ -50,9 +50,7 @@ const MyAccount = () => {
                 alt="menu icon"
               />
             </div>
-            <Link className={styles.styleNoLink} href="/">
-              <IconApp />
-            </Link>
+            <IconApp size={48} redirect="/" />
             <div className={styles.shoppingCart} >
               <Image
                 src={shoppingCartSvg}

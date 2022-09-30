@@ -44,10 +44,6 @@
   transform: translateY(-68px); /* moves the element in the Y axis */
 }
 
-.closeVisible, .show-section {
-  visibility: visible;
-}
-
 .searchHomeIcon {
   width: 15px;
   height: 15px;
@@ -79,6 +75,10 @@
   right: 12px;
   visibility: hidden;
   cursor: pointer;
+}
+
+.closeVisible, .show-section {
+  visibility: visible;
 }
 
 @media (min-width: 765px) {

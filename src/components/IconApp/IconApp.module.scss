@@ -44,6 +44,11 @@
   color: $--hospital-green;
 }
 
+.styleNoLink {
+  text-decoration: none;
+  color: #000;
+}
+
 @media (min-width: 765px) {
   .logoIconSmall {
       height: 48px;

@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { validateEmail } from '@helpers/validations';
+import { AuthContext } from "@context/AuthContext";
 
 const defaultErrorState = {
   username: { error: false, text: "" },
@@ -9,7 +10,8 @@ const defaultErrorState = {
   errorMessage: ""
 };
 
-const useMyAccount = ({ currentUser, editCurrentUserInfo, validateUser }) => {
+const useMyAccount = () => {
+  const { currentUser, editCurrentUserInfo, validateUser } = useContext(AuthContext);
   const [ isEditable, setIsEditable ] = useState(false);
   const [ userName, setUsername ] = useState(currentUser?.username);
   const [ userEmail, setUserEmail ] = useState(currentUser?.email);

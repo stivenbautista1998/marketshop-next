@@ -57,6 +57,10 @@
   align-items: center;
 }
 
+.iconLogo {
+  cursor: pointer;
+}
+
 @media (min-width: 430px) {
   .wrapperLogin {
       justify-content: unset;

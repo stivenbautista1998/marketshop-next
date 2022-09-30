@@ -44,9 +44,9 @@ const MyOrders = () => {
             />
           </div>
           <Link className={styles.styleNoLink} href="/">
-            <h2 className={styles.frontContainer}>
+            <h2 className={`${styles.iconLogo} ${styles.frontContainer}`}>
               <JustIcon />
-               My orders
+              My orders
             </h2>
           </Link>
           <div className={styles.shoppingCart}>

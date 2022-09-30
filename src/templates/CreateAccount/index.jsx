@@ -32,7 +32,7 @@ const CreateAccount = ({ validateUser, addNewUser }) => {
                         />
                       </div>
                       <Link className="no-underline" href="/login">
-                          <IconApp />
+                        <IconApp />
                       </Link>
                       <div className="shopping-cart">
                         <Image
