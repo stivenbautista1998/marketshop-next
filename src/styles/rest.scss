@@ -28,26 +28,6 @@ a.grey__message:hover, a.green__message:hover {
 
 
 /* Pass Recovery section */
-
-.header-section-recovery {
-  margin-top: 7em;
-  margin-bottom: 5em;
-}
-
-.image-product {
-  width: 138px;
-  height: 137px;
-}
-
-.clickedBtn {
-  position: absolute;
-  box-shadow: 0px 0px 3px rgb(0 0 0 / 14%);
-  border-radius: 50%;
-  padding: 17px;
-  right: 3px;
-  top: 5px;
-}
-
 .image-shopping-card {
   width: 69px;
 }
@@ -67,7 +47,7 @@ a.grey__message:hover, a.green__message:hover {
 }
 
 .no-order {
-  border: 8px solid $--hospital-green;
+  border: 8px solid #ACD9B2;
   border-radius: 10px;
   font-size: 1.8rem;
   padding: 1em;
@@ -75,6 +55,11 @@ a.grey__message:hover, a.green__message:hover {
   margin-top: 1em;
   font-weight: bold;
   color: #888;
+}
+
+.image-product {
+  width: 138px;
+  height: 137px;
 }
 
 @media not all and (min-resolution:.001dpcm) {
@@ -101,10 +86,6 @@ a.grey__message:hover, a.green__message:hover {
 
   form > .general-input {
     width: 100%;
-  }
-
-  .recovery-tittle {
-    font-size: 2.5rem;
   }
 }
 

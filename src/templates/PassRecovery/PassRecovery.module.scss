@@ -1,0 +1,126 @@
+@import '../../styles/variables.module';
+
+.wrapperRecovery {
+  text-align: center;
+}
+
+.headerSectionRecovery {
+  margin-top: 7em;
+  margin-bottom: 5em;
+}
+
+.loginSection__recovery {
+  margin-bottom: 2em;
+}
+
+.clickedBtn {
+  position: absolute;
+  box-shadow: 0px 0px 3px rgb(0 0 0 / 14%);
+  border-radius: 50%;
+  padding: 17px;
+  right: 3px;
+  top: 5px;
+}
+
+.recoveryText {
+  margin: 1em auto;
+  margin-bottom: 2em;
+  font-size: 1.4rem;
+  width: 80%;
+  color: #797979;
+}
+
+.loginSection__label {
+  float: left;
+  margin-left: 1.5em;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+
+
+.generalInput {
+  width: 90%;
+  background-color: #F7F7F7;
+  color: #797979;
+  font-size: 1.4rem;
+  font-weight: 400;
+  padding: 0.8em 0.7em;
+  border-radius: 7px;
+  border: none;
+}
+
+.generalInput:-webkit-autofill,
+.generalInput:-webkit-autofill:hover,
+.generalInput:-webkit-autofill:focus,
+.generalInput:-webkit-autofill:active  {
+  box-shadow: 0 0 0 30px #F7F7F7 inset;
+}
+
+.generalInput:focus-visible {
+  outline: none;
+}
+
+.generalButton {
+  width: 90%;
+  min-width: 288px;
+  padding: 1em;
+  border-radius: 10px;
+  font-size: 1.4rem;
+  border: 1px solid #ACD9B2;
+  cursor: pointer;
+}
+
+.greenBtn {
+  background-color: $--hospital-green;
+  color: $--white;
+}
+
+.greenBtn, .greenBtn {
+  margin-top: 2em;
+  margin-bottom: 3em;
+}
+
+.generalMessageLink {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.green__message {
+  color: $--hospital-green;
+}
+
+a.green__message:hover {
+  text-decoration: underline;
+  color: #3498DB;
+}
+
+@media (min-width: 430px) {
+  .section-down .white--btn, .section-down .green--btn {
+      width: 400px;
+  }
+
+  .wrapperRecovery {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 400px;
+  }
+
+  form > .loginSection__label {
+    margin-left: 0;
+    font-size: 1.4em;
+  }
+
+  form > .generalInput {
+    width: 100%;
+  }
+
+  .recoveryTitle {
+    font-size: 2.5rem;
+  }
+
+  .generalButton {
+    width: 100%;
+  }
+}
