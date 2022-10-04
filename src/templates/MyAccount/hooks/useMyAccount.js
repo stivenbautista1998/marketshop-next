@@ -1,47 +1,47 @@
 import { useState, useContext } from 'react';
 import { validateEmail } from '@helpers/validations';
-import { AuthContext } from "@context/AuthContext";
+import { AuthContext } from '@context/AuthContext';
 
 const defaultErrorState = {
-  username: { error: false, text: "" },
-  email: { error: false, text: "" },
-  pass: { error: false, text: "" },
-  passConfirm: { error: false, text: "" },
-  errorMessage: ""
+  username: { error: false, text: '' },
+  email: { error: false, text: '' },
+  pass: { error: false, text: '' },
+  passConfirm: { error: false, text: '' },
+  errorMessage: '',
 };
 
 const useMyAccount = () => {
   const { currentUser, editCurrentUserInfo, validateUser } = useContext(AuthContext);
-  const [ isEditable, setIsEditable ] = useState(false);
-  const [ userName, setUsername ] = useState(currentUser?.username);
-  const [ userEmail, setUserEmail ] = useState(currentUser?.email);
-  const [ userPassWord, setUserPassWord ] = useState(currentUser?.passWord);
-  const [ confirmPassword, setConfirmPassword ] = useState("");
-  const [ showPassConfirm, setShowPassConfirm ] = useState(false);
-  const [ errorState, setErrorState ] = useState(defaultErrorState);
+  const [isEditable, setIsEditable] = useState(false);
+  const [userName, setUsername] = useState(currentUser?.username);
+  const [userEmail, setUserEmail] = useState(currentUser?.email);
+  const [userPassWord, setUserPassWord] = useState(currentUser?.passWord);
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [showPassConfirm, setShowPassConfirm] = useState(false);
+  const [errorState, setErrorState] = useState(defaultErrorState);
 
   const editAccount = () => {
-    if(isEditable) {
-      if(!thereIsEmptyFields(userName, userEmail, userPassWord, confirmPassword)) {
+    if (isEditable) {
+      if (!thereIsEmptyFields(userName, userEmail, userPassWord, confirmPassword)) {
         // we validate if the password fields are the same or if the password has not been changed. otherwise, won't save changes
-        if((userPassWord === confirmPassword) || (userPassWord > 0 && !showPassConfirm)) {
-          const isRegisteredEmail = validateUser(userEmail, "", false);
+        if (userPassWord === confirmPassword || (userPassWord > 0 && !showPassConfirm)) {
+          const isRegisteredEmail = validateUser(userEmail, '', false);
           // if the email is different and already exist then show the message and won't save changes.
-          if(userEmail !== currentUser.email && isRegisteredEmail) {
+          if (userEmail !== currentUser.email && isRegisteredEmail) {
             setErrorState({
-              username: { error: false, text: "" },
-              email: { error: true, text: "Existing Email address" },
-              pass: { error: false, text: "" },
-              passConfirm: { error: false, text: "" },
-              errorMessage: "The email belongs to an existing user"
+              username: { error: false, text: '' },
+              email: { error: true, text: 'Existing Email address' },
+              pass: { error: false, text: '' },
+              passConfirm: { error: false, text: '' },
+              errorMessage: 'The email belongs to an existing user',
             });
-          } else if(!validateEmail(userEmail)) {
+          } else if (!validateEmail(userEmail)) {
             setErrorState({
-              username: { error: false, text: "" },
-              email: { error: true, text: "Enter a valid email address" },
-              pass: { error: false, text: "" },
-              passConfirm: { error: false, text: "" },
-              errorMessage: ""
+              username: { error: false, text: '' },
+              email: { error: true, text: 'Enter a valid email address' },
+              pass: { error: false, text: '' },
+              passConfirm: { error: false, text: '' },
+              errorMessage: '',
             });
           } else {
             // saving changes
@@ -49,107 +49,107 @@ const useMyAccount = () => {
               username: userName,
               email: userEmail,
               passWord: userPassWord,
-              image: ""
+              image: '',
             });
             coldFields();
           }
         } else {
           setErrorState({
-            username: { error: false, text: "" },
-            email: { error: false, text: "" },
-            pass: { error: true, text: "" },
-            passConfirm: { error: true, text: "" },
-            errorMessage: "The passwords don't match"
+            username: { error: false, text: '' },
+            email: { error: false, text: '' },
+            pass: { error: true, text: '' },
+            passConfirm: { error: true, text: '' },
+            errorMessage: "The passwords don't match",
           });
         }
       }
     } else {
       setIsEditable(true);
     }
-  }
+  };
 
   const thereIsEmptyFields = (userInfo, emailInfo, passInfo, passConfirmInfo) => {
     let result = false;
 
-    if(userInfo === "" || emailInfo === "" || passInfo === "" || (passConfirmInfo === "" && showPassConfirm)) {
+    if (userInfo === '' || emailInfo === '' || passInfo === '' || (passConfirmInfo === '' && showPassConfirm)) {
       setErrorState({
-        username: { error: (userInfo === ""), text: "" },
-        email: { error: (emailInfo === ""), text: "" },
-        pass: { error: (passInfo === ""), text: "" },
-        passConfirm: { error: ((passConfirmInfo === "") && showPassConfirm), text: "" },
-        errorMessage: "No field should be empty."
+        username: { error: userInfo === '', text: '' },
+        email: { error: emailInfo === '', text: '' },
+        pass: { error: passInfo === '', text: '' },
+        passConfirm: { error: passConfirmInfo === '' && showPassConfirm, text: '' },
+        errorMessage: 'No field should be empty.',
       });
       result = true;
-    } else if(userInfo === currentUser.username && emailInfo === currentUser.email && passInfo === currentUser.passWord) {
+    } else if (userInfo === currentUser.username && emailInfo === currentUser.email && passInfo === currentUser.passWord) {
       setErrorState({
-        username: { error: false, text: "" },
-        email: { error: false, text: "" },
-        pass: { error: false, text: "" },
-        passConfirm: { error: false, text: "" },
-        errorMessage: "The user information is the same"
+        username: { error: false, text: '' },
+        email: { error: false, text: '' },
+        pass: { error: false, text: '' },
+        passConfirm: { error: false, text: '' },
+        errorMessage: 'The user information is the same',
       });
       result = true;
     }
 
     return result;
-  }
+  };
 
   const coldFields = () => {
     setIsEditable(false);
-    setConfirmPassword("");
+    setConfirmPassword('');
     setShowPassConfirm(false);
     setErrorState(defaultErrorState);
-  }
+  };
 
   const onChangeHandler = (event) => {
     const { name, value } = event.target;
-    if(name === "username-txt") {
+    if (name === 'username-txt') {
       setUsername(value);
-      if(errorState.username.error) {
+      if (errorState.username.error) {
         setErrorState({
           ...errorState,
-          username: { error: false, text: "" }
+          username: { error: false, text: '' },
         });
       }
-    } else if(name === "email-txt") {
+    } else if (name === 'email-txt') {
       setUserEmail(value);
-      if(errorState.email.error) {
+      if (errorState.email.error) {
         setErrorState({
           ...errorState,
-          email: { error: false, text: "" }
+          email: { error: false, text: '' },
         });
       }
-    } else if(name === "password-txt") {
+    } else if (name === 'password-txt') {
       setUserPassWord(value);
-      if(value.length > 0) {
+      if (value.length > 0) {
         setShowPassConfirm(true);
       } else {
         setShowPassConfirm(false);
       }
-      if(errorState.pass.error) {
+      if (errorState.pass.error) {
         setErrorState({
           ...errorState,
-          pass: { error: false, text: "" },
-          passConfirm: { error: false, text: "" }
+          pass: { error: false, text: '' },
+          passConfirm: { error: false, text: '' },
         });
       }
-    } else if(name === "repeat-password-txt") {
+    } else if (name === 'repeat-password-txt') {
       setConfirmPassword(value);
-      if(errorState.passConfirm.error) {
+      if (errorState.passConfirm.error) {
         setErrorState({
           ...errorState,
-          pass: { error: false, text: "" },
-          passConfirm: { error: false, text: "" }
+          pass: { error: false, text: '' },
+          passConfirm: { error: false, text: '' },
         });
       }
     }
-  }
+  };
 
   const syncUserData = () => {
     setUsername(currentUser?.username);
     setUserEmail(currentUser?.email);
     setUserPassWord(currentUser?.passWord);
-  }
+  };
 
   return {
     isEditable,
@@ -161,7 +161,7 @@ const useMyAccount = () => {
     onChangeHandler,
     editAccount,
     syncUserData,
-    errorState
+    errorState,
   };
 };
 

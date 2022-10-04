@@ -41,13 +41,13 @@ const LoginForm = ({ formRef, handlerSubmit, loginOnChange, passOnChange, errorS
           clickHandler={handlerSubmit}
         />
           <Link href="/password-recovery">
-            <a className={`${styles.generalMessageLink} ${styles.green__message}`}>
+            <div className={`${styles.generalMessageLink} ${styles.green__message}`}>
               Forgot my password
-            </a>
+            </div>
           </Link>
       </form>
     </main>
   );
-}
+};
 
 export { LoginForm };

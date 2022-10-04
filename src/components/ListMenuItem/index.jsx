@@ -19,6 +19,6 @@ const ListMenuItem = ({ name, selected, mobile, menuTab, handleHomeList }) => {
       {capitalize(name)}
     </li>
   );
-}
+};
 
 export { ListMenuItem };

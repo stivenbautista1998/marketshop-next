@@ -5,7 +5,6 @@ import Image from 'next/image';
 import styles from './IconApp.module.scss';
 import Link from 'next/link';
 
-// className={ bigSize ? styles.logoIcon : styles.logoIconSmall }
 const IconApp = ({ bigSize = false, size = 85, redirect = null }) => {
   const ContentIcon = () => (
     <>
@@ -26,9 +25,9 @@ const IconApp = ({ bigSize = false, size = 85, redirect = null }) => {
   if(redirect) {
     return (
       <Link href={redirect}>
-        <a className={`${styles.styleNoLink} ${bigSize ? styles.logoIcon : styles.logoIconSmall}`}>
+        <div className={`${styles.styleNoLink} ${bigSize ? styles.logoIcon : styles.logoIconSmall}`}>
           <ContentIcon />
-        </a>
+        </div>
       </Link>
     );
   }

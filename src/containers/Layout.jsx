@@ -6,6 +6,6 @@ const Layout = ({ children }) => {
             {children}
         </main>
     );
-}
+};
 
 export { Layout };

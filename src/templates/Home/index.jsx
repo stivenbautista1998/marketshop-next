@@ -46,7 +46,8 @@ const Home = ({ currentUser, setCurrentUser }) => {
 
     return () => {
       window.removeEventListener("resize", gettingResizedMargin);
-    }
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -96,6 +97,6 @@ const Home = ({ currentUser, setCurrentUser }) => {
       />
     </section>
   );
-}
+};
 
 export { Home };

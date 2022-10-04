@@ -40,6 +40,6 @@ const Login = () => {
         </div>
     </div>
   );
-}
+};
 
 export { Login };

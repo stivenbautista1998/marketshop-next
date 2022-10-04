@@ -29,16 +29,16 @@ const UserMenu = ({ userEmail, showNav, handleMenuNav, setCurrentUser }) => {
         <ul className={styles.emailListUl}>
           <li className={styles.emailListUl__item}>
             <Link href="/my-orders">
-              <a className={styles.styleNoLink}>
+              <div className={styles.styleNoLink}>
                 My orders
-              </a>
+              </div>
             </Link>
           </li>
           <li className={styles.emailListUl__item}>
             <Link href="/my-account">
-              <a className={styles.styleNoLink}>
+              <div className={styles.styleNoLink}>
                 My account
-              </a>
+              </div>
             </Link>
           </li>
           <button onClick={singOut} className={`${styles.emailListUl__item} ${styles.menuTab__logging}`}>
@@ -48,6 +48,6 @@ const UserMenu = ({ userEmail, showNav, handleMenuNav, setCurrentUser }) => {
       </div>
     </div>
   );
-}
+};
 
 export { UserMenu };

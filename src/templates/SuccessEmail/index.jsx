@@ -33,13 +33,13 @@ const SuccessEmail = () => {
         </Link>
         <p className={`${styles.generalMessageLink} ${styles.grey__message}`}>Didn’t receive the email? </p>
         <Link href="/password-recovery">
-          <a className={`${styles.generalMessageLink} ${styles.green__message}`}>
+          <div className={`${styles.generalMessageLink} ${styles.green__message}`}>
             Resend
-          </a>
+          </div>
         </Link>
       </main>
     </div>
-  )
-}
+  );
+};
 
 export { SuccessEmail };

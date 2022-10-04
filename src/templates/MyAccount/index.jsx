@@ -1,6 +1,5 @@
 import { useContext, useEffect } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { IconApp } from '@components/IconApp';
 import { GeneralButton } from "@components/GeneralButton";
 import { SyncAlertWithProps } from "@components/SyncAlert";
@@ -12,7 +11,7 @@ import menuSvg from "@icons/menu-icon.svg";
 import shoppingCartSvg from "@icons/shopping-cart.svg";
 import styles from './MyAccount.module.scss';
 
-const activeField = { backgroundColor: "rgb(247, 247, 247)", paddingLeft: "0.7em" }
+const activeField = { backgroundColor: "rgb(247, 247, 247)", paddingLeft: "0.7em" };
 
 const MyAccount = () => {
   const { syncAuth } = useContext(AuthContext);
@@ -34,6 +33,7 @@ const MyAccount = () => {
   // show user info updated every time the user information is updated for another tab.
   useEffect(() => {
     syncUserData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [syncAuth]);
 
   return (
@@ -132,6 +132,6 @@ const MyAccount = () => {
       />
     </div>
   );
-}
+};
 
 export { MyAccount };

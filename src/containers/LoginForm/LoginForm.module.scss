@@ -76,6 +76,7 @@
   text-decoration: none;
   font-size: 1.2rem;
   margin-top: 3em;
+  cursor: pointer;
 }
 
 .green__message {
@@ -87,7 +88,7 @@
   color: #797979;
 }
 
-a.grey__message:hover, a.green__message:hover {
+div.grey__message:hover, div.green__message:hover {
   text-decoration: underline;
   color: $--soft-blue;
 }

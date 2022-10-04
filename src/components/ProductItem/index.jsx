@@ -21,7 +21,7 @@ const ProductItem = ({ product, setProductDetailTab }) => {
     currentState.cart.forEach((productItem) => {
       if(productItem.id === product.id) setIsSelected(true);
     });
-  }, [currentState.cart]);
+  }, [currentState.cart, product.id]);
 
 
   // if lastRemoved is equal to this product id then the product has be unselected.
@@ -32,7 +32,7 @@ const ProductItem = ({ product, setProductDetailTab }) => {
         if(deletedProduct.id === product.id) setIsSelected(false);
       });
     }
-  }, [currentState.lastRemoved]);
+  }, [currentState.lastRemoved, product.id]);
 
 
   // it updates the product selection currentState, receiving the new selection value
@@ -86,6 +86,6 @@ const ProductItem = ({ product, setProductDetailTab }) => {
       </div>
     </article>
   );
-}
+};
 
 export { ProductItem };

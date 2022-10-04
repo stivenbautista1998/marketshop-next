@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-// import { useRouter } from 'next/router';
+import { useRouter } from 'next/router'; // remove code here.
 import { ProductOrdered } from '@components/ProductOrdered';
 import { JustIcon } from '@components/JustIcon';
 import AppContext from '../../context/AppContext';
@@ -12,12 +12,15 @@ import styles from './MyOrderDetail.module.scss';
 
 const MyOrderDetail = () => {
   const { totalSelectedProducts } = useContext(AppContext);
-  /* const route = useRouter();
+
+  // remove code here.
+  const route = useRouter();
   const state = route.query;
-  console.log(state); */
+  console.log(state);
+  // remove code here.
 
   return (
-    <div className="wrapper-login">
+    <div className={styles.wrapperLogin}>
         <header className="header-my-order">
             <nav className="header-home-nav nav--my-orders">
               <div className="menu-icon">
@@ -61,7 +64,7 @@ const MyOrderDetail = () => {
           {state.productsOrdered.map((product) => <ProductOrdered key={product.id} productInfo={product} />)}
         </main>
     </div>
-  )
-}
+  );
+};
 
 export { MyOrderDetail };

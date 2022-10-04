@@ -93,6 +93,6 @@ const MenuTab = ({
       </div>
     </div>
   );
-}
+};
 
 export { MenuTab };

@@ -31,22 +31,23 @@ const withStorageListener = (WrapperElement) => {
             setCacheKeys((prevState) => ({ ...prevState, userUpdate: true }));
           }
         }
-      }
+      };
 
       window.addEventListener("storage", gettingStorageChanges);
 
       return () => {
         window.removeEventListener("storage", gettingStorageChanges);
-      }
+      };
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
 
     function toggleSync() {
-      if(!!cacheKeys.ordersUpdate) {
+      if(cacheKeys.ordersUpdate) {
         props.synchronize(false); // synchronize the orders done by the user.
       }
 
-      if(!!cacheKeys.userUpdate) {
+      if(cacheKeys.userUpdate) {
         if(JSON.parse(cacheUserInfo.newValue) === null) { // current logged user info.
           synchronizeCurrentUser(JSON.parse(cacheUserInfo.oldValue));
           router.push("/login");
@@ -65,7 +66,7 @@ const withStorageListener = (WrapperElement) => {
         onCLickHandler={toggleSync}
       />
     );
-  }
+  };
 };
 
 export default withStorageListener;

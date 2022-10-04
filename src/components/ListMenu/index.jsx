@@ -16,6 +16,6 @@ const ListMenu = ({ mobile, menuTab, listInfo, render, children }) => {
       {listInfo.map(render || children)}
     </ul>
   );
-}
+};
 
 export { ListMenu };

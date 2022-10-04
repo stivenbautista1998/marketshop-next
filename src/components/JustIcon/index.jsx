@@ -5,7 +5,7 @@ import appIcon from "@icons/app-icon.png";
 const iconSize = {
   "small": 41,
   "normal": 55
-}
+};
 
 const JustIcon = ({ size = null/* , responsiveSize = null */ }) => {
   /* { size !== null ? `` : "" } */

@@ -52,10 +52,10 @@ const ProductList = ({ products, setProductDetailTab, loadingProducts, productEr
     <div className="wrapper-home">
       <main className={styles.articleSection}>
         {productItems}
-        {!!loadingProducts ? <CompleteLoadingSkeleton /> : productItemsSection }
+        {loadingProducts ? <CompleteLoadingSkeleton /> : productItemsSection }
       </main>
     </div>
   );
-}
+};
 
 export { ProductList };

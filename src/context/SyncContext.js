@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 
 const SyncContext = React.createContext();
 
@@ -9,19 +9,21 @@ const SyncContext = React.createContext();
  * It returns a React element with the context info that will inherit all its children.
  */
 function SyncInfoProvider({ children }) {
-    const [ cacheUserInfo, setCacheUserInfo ] = React.useState({ newValue: "", oldValue: "" });
-    const [ cacheKeys, setCacheKeys ] = React.useState({ ordersUpdate: false, userUpdate: false });
+  const [cacheUserInfo, setCacheUserInfo] = React.useState({ newValue: '', oldValue: '' });
+  const [cacheKeys, setCacheKeys] = React.useState({ ordersUpdate: false, userUpdate: false });
 
-    return (
-        <SyncContext.Provider value={{
-            cacheUserInfo,
-            setCacheUserInfo,
-            cacheKeys,
-            setCacheKeys
-        }}>
-            {children}
-        </SyncContext.Provider>
-    );
+  return (
+    <SyncContext.Provider
+      value={{
+        cacheUserInfo,
+        setCacheUserInfo,
+        cacheKeys,
+        setCacheKeys,
+      }}
+    >
+      {children}
+    </SyncContext.Provider>
+  );
 }
 
 export { SyncInfoProvider, SyncContext };

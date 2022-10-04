@@ -1,7 +1,7 @@
 // import '../styles/globals.css'
-import { AppContextProvider } from "@context/AppContext";
-import { SyncInfoProvider } from "@context/SyncContext";
-import { AuthContextProvider } from "@context/AuthContext";
+import { AppContextProvider } from '@context/AppContext';
+import { SyncInfoProvider } from '@context/SyncContext';
+import { AuthContextProvider } from '@context/AuthContext';
 
 import '@styles/global.scss';
 import '@styles/icon-styles.scss';
@@ -19,4 +19,4 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default MyApp
+export default MyApp;

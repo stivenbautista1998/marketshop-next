@@ -1,5 +1,5 @@
 import { MyAccount } from '@templates/MyAccount';
-import { RouteGuard } from "@components/RouteGuard";
+import { RouteGuard } from '@components/RouteGuard';
 
 const myAccount = () => {
   return (

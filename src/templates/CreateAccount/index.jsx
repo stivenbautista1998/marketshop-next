@@ -106,6 +106,6 @@ const CreateAccount = () => {
       </div>
     </div>
   );
-}
+};
 
 export { CreateAccount };

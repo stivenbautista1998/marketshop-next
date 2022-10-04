@@ -1,5 +1,5 @@
-import { MyOrders } from "@templates/MyOrders";
-import { RouteGuard } from "@components/RouteGuard";
+import { MyOrders } from '@templates/MyOrders';
+import { RouteGuard } from '@components/RouteGuard';
 
 function myOrders() {
   return (
@@ -7,6 +7,6 @@ function myOrders() {
       <MyOrders />
     </RouteGuard>
   );
-};
+}
 
 export default myOrders;

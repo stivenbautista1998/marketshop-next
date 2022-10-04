@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 
-function getEndpoint( categoryId ) {
-  if(categoryId === 0) {
-    return "https://api.escuelajs.co/api/v1/products"; // ?limit=500&offset=1
+function getEndpoint(categoryId) {
+  if (categoryId === 0) {
+    return 'https://api.escuelajs.co/api/v1/products'; // ?limit=500&offset=1
   } else {
     return `https://api.escuelajs.co/api/v1/categories/${categoryId}/products`;
   }
@@ -16,8 +16,8 @@ function getEndpoint( categoryId ) {
  * It filters the array you pass as the productList parameter and returns and array with
  * the amount of elements you indicate in the limit parameter.
  */
-function limitByAmount( limit, productList ) {
-  if(productList.length > limit) {
+function limitByAmount(limit, productList) {
+  if (productList.length > limit) {
     const copyArray = [...productList];
     return copyArray.splice(0, limit);
   } else {
@@ -26,25 +26,25 @@ function limitByAmount( limit, productList ) {
 }
 
 const useProducts = () => {
-  const [ products, setProducts ] = useState([]); // general product info
-  const [ filteredProducts, setFilteredProducts ] = useState(null); // products filtered by a search parameter.
-  const [ loadingProducts, setLoadingProducts ] = useState(true);
-  const [ error, setError ] = useState(false);
-  let controller = null;
+  const [products, setProducts] = useState([]); // general product info
+  const [filteredProducts, setFilteredProducts] = useState(null); // products filtered by a search parameter.
+  const [loadingProducts, setLoadingProducts] = useState(true);
+  const [error, setError] = useState(false);
+  let controller = useRef(null);
 
-  const [ filteringProductsByMaximum, setFilteringProductsByMaximum ] = useState([]); // maximum amount of products is 50.
+  const [filteringProductsByMaximum, setFilteringProductsByMaximum] = useState([]); // maximum amount of products is 50.
 
   useEffect(() => {
     const productRequest = async () => {
       try {
         // cancel pending request if any
-        if(controller) controller.abort();
-        controller = new AbortController(); // make our request cancellable
-        const response = await axios(getEndpoint(0), { signal: controller.signal });
+        if (controller.current) controller.current.abort();
+        controller.current = new AbortController(); // make our request cancellable
+        const response = await axios(getEndpoint(0), { signal: controller.current.signal });
         setProducts(response.data);
         setFilteringProductsByMaximum(limitByAmount(50, response.data));
         setLoadingProducts(false);
-        controller = null;
+        controller.current = null;
       } catch (error) {
         console.warn(error.message);
         setError(error.message);
@@ -54,7 +54,7 @@ const useProducts = () => {
     productRequest();
   }, []);
 
-  function updateProducts( categoryId ) {
+  function updateProducts(categoryId) {
     // setting up used state to default value before executing the function.
     setError(false);
     setLoadingProducts(true);
@@ -63,13 +63,13 @@ const useProducts = () => {
 
     const productRequest = async () => {
       try {
-        if(controller) controller.abort();
-        controller = new AbortController();
-        const response = await axios(getEndpoint(categoryId), { signal: controller.signal });
+        if (controller.current) controller.current.abort();
+        controller.current = new AbortController();
+        const response = await axios(getEndpoint(categoryId), { signal: controller.current.signal });
         setProducts(response.data);
         setFilteringProductsByMaximum(limitByAmount(50, response.data));
         setLoadingProducts(false);
-        controller = null;
+        controller.current = null;
       } catch (error) {
         console.warn(error.message);
         setError(error.message);
@@ -79,23 +79,19 @@ const useProducts = () => {
     productRequest();
   }
 
-
   /**
    * @param  {string} filterValue
    * It allows to update the global state filteredProducts by receiving a search parameter,
    * All the products that matches the parameter will be placed into the mentioned state.
    */
-  function updateFilteredProducts( filterValue ) {
+  function updateFilteredProducts(filterValue) {
     // setting up used state to default value before executing the function.
     setError(false);
     setLoadingProducts(true);
     setFilteringProductsByMaximum([]);
     setFilteredProducts(null);
 
-    const productResult = products
-      .filter(productItem =>
-          productItem.title.toLowerCase().includes(filterValue.toLowerCase())
-      );
+    const productResult = products.filter((productItem) => productItem.title.toLowerCase().includes(filterValue.toLowerCase()));
     setFilteredProducts(productResult);
     setLoadingProducts(false);
   }
@@ -106,8 +102,8 @@ const useProducts = () => {
     filteredProducts,
     updateFilteredProducts,
     loadingProducts,
-    error
+    error,
   };
-}
+};
 
 export { useProducts };

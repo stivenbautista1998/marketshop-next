@@ -1,20 +1,20 @@
 import { useState, useEffect } from 'react';
 
 const useStorageAuth = (nameItem, nameCurrentItem, initialValue) => {
-  const [ usersInfo, setUsersInfo ] = useState(initialValue);
-  const [ loadingUsersInfo, setLoadingUsersInfo ] = useState(true);
-  const [ errorUsersInfo, setErrorUsersInfo ] = useState(false);
+  const [usersInfo, setUsersInfo] = useState(initialValue);
+  const [loadingUsersInfo, setLoadingUsersInfo] = useState(true);
+  const [errorUsersInfo, setErrorUsersInfo] = useState(false);
 
-  const [ currentUser, setCurrentUser ] = useState(undefined); // added to test
-  const [ loadingCurrentUser, setLoadingCurrentUser ] = useState(true);
-  const [ errorCurrentUser, setErrorCurrentUser ] = useState(false);
+  const [currentUser, setCurrentUser] = useState(undefined); // added to test
+  const [loadingCurrentUser, setLoadingCurrentUser] = useState(true);
+  const [errorCurrentUser, setErrorCurrentUser] = useState(false);
 
-  const [ syncAuth, setSyncAuth ] = useState(true);
+  const [syncAuth, setSyncAuth] = useState(true);
 
   useEffect(() => {
     try {
       const localStorageUsersOrders = localStorage.getItem(nameItem);
-      if(localStorageUsersOrders) {
+      if (localStorageUsersOrders) {
         setUsersInfo(JSON.parse(localStorageUsersOrders));
       } else {
         localStorage.setItem(nameItem, JSON.stringify(initialValue));
@@ -24,14 +24,14 @@ const useStorageAuth = (nameItem, nameCurrentItem, initialValue) => {
       setErrorUsersInfo(error.message);
       setLoadingUsersInfo(false);
     }
-  }, []);
+  }, [nameItem, initialValue]);
 
   // this will update the current user info at the beginning and whenever there is an update for another tab.
   useEffect(() => {
     try {
       setLoadingCurrentUser(true);
       const localStorageCurrentUser = localStorage.getItem(nameCurrentItem);
-      if(localStorageCurrentUser) {
+      if (localStorageCurrentUser) {
         setCurrentUser(JSON.parse(localStorageCurrentUser));
         console.log(JSON.parse(localStorageCurrentUser));
       } else {
@@ -43,7 +43,7 @@ const useStorageAuth = (nameItem, nameCurrentItem, initialValue) => {
       setErrorCurrentUser(error.message);
       setLoadingCurrentUser(false);
     }
-  }, [syncAuth]);
+  }, [nameCurrentItem, syncAuth]);
 
   /**
    * @param  {object} item
@@ -61,7 +61,7 @@ const useStorageAuth = (nameItem, nameCurrentItem, initialValue) => {
       setErrorUsersInfo(error.message);
       setLoadingUsersInfo(false);
     }
-  }
+  };
 
   /**
    * @param  {object} item
@@ -79,12 +79,12 @@ const useStorageAuth = (nameItem, nameCurrentItem, initialValue) => {
       setErrorCurrentUser(error.message);
       setLoadingCurrentUser(false);
     }
-  }
+  };
 
-  const synchronizeCurrentUser = ( lastUserInfo = null ) => {
-    if(lastUserInfo) {
+  const synchronizeCurrentUser = (lastUserInfo = null) => {
+    if (lastUserInfo) {
       const updatedUserInfo = usersInfo.map((item) => {
-        if(item.id === lastUserInfo?.id) {
+        if (item.id === lastUserInfo?.id) {
           return { ...lastUserInfo };
         } else {
           return item;
@@ -93,8 +93,7 @@ const useStorageAuth = (nameItem, nameCurrentItem, initialValue) => {
       saveUsersInfo(updatedUserInfo);
     }
     setSyncAuth(false);
-  }
-
+  };
 
   return {
     usersInfo,
@@ -106,7 +105,7 @@ const useStorageAuth = (nameItem, nameCurrentItem, initialValue) => {
     errorUsersInfo,
     errorCurrentUser,
     syncAuth,
-    synchronizeCurrentUser
+    synchronizeCurrentUser,
   };
 };
 

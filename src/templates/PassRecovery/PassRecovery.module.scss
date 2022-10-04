@@ -88,13 +88,14 @@
   display: inline-block;
   text-decoration: none;
   font-size: 1.2rem;
+  cursor: pointer;
 }
 
 .green__message {
   color: $--hospital-green;
 }
 
-a.green__message:hover {
+div.green__message:hover {
   text-decoration: underline;
   color: #3498DB;
 }

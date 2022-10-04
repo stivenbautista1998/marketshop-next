@@ -27,7 +27,7 @@ const MyOrders = () => {
       <div className="no-order">
         No Orders Made
       </div>
-    )
+    );
   };
 
   return (
@@ -66,6 +66,6 @@ const MyOrders = () => {
       <SyncAlertWithProps synchronize={setSyncOfCurrentUser} />
     </div>
   );
-}
+};
 
 export { MyOrders };

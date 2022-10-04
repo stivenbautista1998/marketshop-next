@@ -9,6 +9,6 @@ const GeneralButton = ({ buttonText, color, clickHandler }) => {
             {buttonText}
         </button>
     );
-}
+};
 
 export { GeneralButton };

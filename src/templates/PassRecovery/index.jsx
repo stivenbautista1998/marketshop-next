@@ -22,13 +22,13 @@ const PassRecovery = () => {
           </button>
         </Link>
         <Link href="/login">
-          <a className={`${styles.generalMessageLink} ${styles.green__message}`}>
+          <div className={`${styles.generalMessageLink} ${styles.green__message}`}>
             Back to log in
-          </a>
+          </div>
         </Link>
       </form>
     </div>
   );
-}
+};
 
 export { PassRecovery };

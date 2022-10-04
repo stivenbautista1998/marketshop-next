@@ -1,9 +1,7 @@
-import { SuccessEmail } from "@templates/SuccessEmail";
+import { SuccessEmail } from '@templates/SuccessEmail';
 
 const successEmail = () => {
-  return (
-    <SuccessEmail />
-  );
+  return <SuccessEmail />;
 };
 
 export default successEmail;

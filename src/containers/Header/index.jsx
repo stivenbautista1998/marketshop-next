@@ -55,7 +55,7 @@ class Header extends Component {
           return false;
         }
       } else {
-        return false
+        return false;
       }
 
     } else {
@@ -112,7 +112,7 @@ class Header extends Component {
     // making sure the right position for larger devices is provided when the component is completely loaded.
     let leftPosition = "5%";
     if(typeof window !== "undefined") {
-      console.log("inside!!")
+      console.log("inside!!");
       leftPosition = ((!this.isCorrectPosition() && this.state.headerLoaded) ?
       this.getLeftPosition() :
       this.props.searchLeftPosition);

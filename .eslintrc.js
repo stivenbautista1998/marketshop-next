@@ -14,6 +14,7 @@ module.exports = {
     'next/core-web-vitals'
   ],
   rules: {
-    'semi': ['error', 'always']
+    'semi': ['error', 'always'],
+    'prettier/prettier': 0 // this is to not make the rules less hard.
   }
 }

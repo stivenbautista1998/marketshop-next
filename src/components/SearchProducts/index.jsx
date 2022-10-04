@@ -22,13 +22,13 @@ const SearchProducts = ({ leftPosition = null, searchValue, setSearchValue, filt
         setShowSearch(true);
       }
       lastScrollY = window.scrollY;
-    }
+    };
 
     window.addEventListener("scroll", scrollHandler);
 
     return () => {
       window.removeEventListener("scroll", scrollHandler);
-    }
+    };
   },[]);
 
   function cleanSearchInput() {
@@ -88,6 +88,6 @@ const SearchProducts = ({ leftPosition = null, searchValue, setSearchValue, filt
       </div>
     </div>
   );
-}
+};
 
 export { SearchProducts };

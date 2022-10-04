@@ -22,7 +22,7 @@ const ShoppingCardTab = ({ showShoppingCardTab, shoppingCardRightPosition, refHe
   const { currentState, removeFromCart, addOrder, totalSelectedProducts } = useContext(AppContext);
   const [ btnClickable, setBtnClickable ] = useState(false);
 
-  console.log(currentState)
+  console.log(currentState);
   // checking if the rightPosition given is correct or just a wrong value.
   function isCorrectPosition() {
     if(typeof window === "undefined") return true;
@@ -99,7 +99,7 @@ const ShoppingCardTab = ({ showShoppingCardTab, shoppingCardRightPosition, refHe
         </button>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export { ShoppingCardTab };
