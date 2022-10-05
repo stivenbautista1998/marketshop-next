@@ -14,7 +14,9 @@ const ListMenuItem = ({ name, selected, mobile, menuTab, handleHomeList }) => {
 
   return (
     <li onClick={handleHomeList}
+      onKeyPress={handleHomeList}
       className={menuTab ? isMenuTab : isFrontTab}
+      role="presentation"
     >
       {capitalize(name)}
     </li>

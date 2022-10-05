@@ -111,6 +111,24 @@ const ProductDetailTab = ({ productInfo, closeProductDetailTab, pDetailRightPosi
     );
   }
 
+  function keyDownBackProduct(event) {
+    if(event.keyCode === 13) {
+      backProduct();
+    }
+  }
+
+  function keyDownNextProduct(event) {
+    if(event.keyCode === 13) {
+      nextProduct();
+    }
+  }
+
+  function keyDownCloseProductDetail(event) {
+    if(event.keyCode === 13) {
+      closeProductDetailTab(setShowTab, updateProductDetailOpen);
+    }
+  }
+
   return (
     <div className={`${styles.productDetailTab} ${showTab ? styles.showProductDetail : ''}`}
       style={{ right: (isCorrectPosition() ? pDetailRightPosition : getRightPosition()) }} >
@@ -118,7 +136,11 @@ const ProductDetailTab = ({ productInfo, closeProductDetailTab, pDetailRightPosi
         <div className={`${styles.imageContainer} ${styles.productDetailImg}`}>
           <ImagesList selected={selectedImage} />
           <div className={styles.wrapperBackBtn}>
-            <div className={`${styles.arrowIcon} ${styles.backIcon}`} onClick={backProduct}>
+            <div className={`${styles.arrowIcon} ${styles.backIcon}`}
+              onClick={backProduct}
+              onKeyDown={keyDownBackProduct}
+              role="presentation"
+            >
               <Image
                 src={arrowRightSvg}
                 width={15}
@@ -129,7 +151,11 @@ const ProductDetailTab = ({ productInfo, closeProductDetailTab, pDetailRightPosi
             </div>
           </div>
           <div className={styles.wrapperNextBtn}>
-            <div className={`${styles.arrowIcon}`} onClick={nextProduct}>
+            <div className={`${styles.arrowIcon}`}
+              onClick={nextProduct}
+              onKeyDown={keyDownNextProduct}
+              role="presentation"
+            >
               <Image
                 src={arrowRightSvg}
                 alt="arrow right"
@@ -140,7 +166,11 @@ const ProductDetailTab = ({ productInfo, closeProductDetailTab, pDetailRightPosi
             </div>
           </div>
           <div className={styles.wrapperCloseBtn}></div>
-          <div className={styles.closeIcon} onClick={() => closeProductDetailTab(setShowTab, updateProductDetailOpen)}>
+          <div className={styles.closeIcon}
+            onClick={() => closeProductDetailTab(setShowTab, updateProductDetailOpen)}
+            onKeyDown={keyDownCloseProductDetail}
+            role="presentation"
+          >
             <Image
               src={xIconSvg}
               width={12}

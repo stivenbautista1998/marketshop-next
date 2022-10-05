@@ -13,9 +13,19 @@ const UserMenu = ({ userEmail, showNav, handleMenuNav, setCurrentUser }) => {
     router.push("/login");
   };
 
+  const keyDownHandleMenuNav = (event) => {
+    if(event.keyCode === 13) {
+      handleMenuNav();
+    }
+  };
+
   return (
     <div className={styles.emailMenu}>
-      <div onClick={handleMenuNav} className={styles.emailMenu__front}>
+      <div className={styles.emailMenu__front}
+        onClick={handleMenuNav}
+        onKeyDown={keyDownHandleMenuNav}
+        role="presentation"
+      >
         <span className={styles.emailMenu__text}>{userEmail}</span>
         <Image
           src={arrowDownSvg}

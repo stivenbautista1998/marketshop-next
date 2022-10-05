@@ -54,6 +54,12 @@ const SearchProducts = ({ leftPosition = null, searchValue, setSearchValue, filt
     }
   }
 
+  function keyDownCleanSearchInput(event) {
+    if(event.keyCode === 13) {
+      cleanSearchInput();
+    }
+  }
+
   return (
     <div className={styles.searchWrapper}>
       <div className={`${styles.generalInput} ${styles.centerSearch} ${styles.searchHomeSection} ${showSearch ? '' : styles.searchHidden }`}
@@ -76,7 +82,11 @@ const SearchProducts = ({ leftPosition = null, searchValue, setSearchValue, filt
           type="text"
           placeholder="Search product"
         />
-        <div className={`${styles.searchHomeIcon} ${styles.cleanSearch} ${ showCloseBtn ? styles.closeVisible : '' }`} onClick={cleanSearchInput}>
+        <div className={`${styles.searchHomeIcon} ${styles.cleanSearch} ${ showCloseBtn ? styles.closeVisible : '' }`}
+          onClick={cleanSearchInput}
+          onKeyDown={keyDownCleanSearchInput}
+          role="presentation"
+        >
           <Image
             src={xIconSvg}
             width={15}

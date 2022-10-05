@@ -51,9 +51,31 @@ const MenuTab = ({
     }
   }
 
+  function keyDownHideMenu(event) {
+    if(event.keyCode === 13) {
+      hideMenu();
+    }
+  }
+
+  function keyDownGoToMyOrders(event) {
+    if(event.keyCode === 13) {
+      goToMyOrders();
+    }
+  }
+
+  function keyDownGoToMyAccount(event) {
+    if(event.keyCode === 13) {
+      goToMyAccount();
+    }
+  }
+
   return (
     <div className={`${styles.menuTab} ${showMenuTab ? styles.menuActive : ""}`}>
-      <div onClick={hideMenu} className={styles.closeIcon}>
+      <div className={styles.closeIcon}
+        onClick={hideMenu}
+        onKeyDown={keyDownHideMenu}
+        role="presentation"
+      >
         <Image
           src={closeIconSvg}
           width={12}
@@ -77,10 +99,18 @@ const MenuTab = ({
           )}
         />
         <ul className={styles.menuTab__logged}>
-          <li onClick={goToMyOrders} className={styles.menuTab__logged__item}>
+          <li className={styles.menuTab__logged__item}
+            onClick={goToMyOrders}
+            onKeyDown={keyDownGoToMyOrders}
+            role="presentation"
+          >
             My orders
           </li>
-          <li onClick={goToMyAccount} className={styles.menuTab__logged__item}>
+          <li className={styles.menuTab__logged__item}
+            onClick={goToMyAccount}
+            onKeyDown={keyDownGoToMyAccount}
+            role="presentation"
+          >
             My account
           </li>
         </ul>

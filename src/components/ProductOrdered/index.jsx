@@ -14,6 +14,12 @@ const ProductOrdered = ({ productInfo, deleteItem = null }) => {
     setTimeout(() => deleteItem(), 300);
   }
 
+  function keyDownDeleteProductOrdered(event) {
+    if(event.keyCode === 13) {
+      deleteProductOrdered();
+    }
+  }
+
   return (
     <div>
       <article className={`${styles.shoppingCardItem} ${ removeProduct ? styles.deletedItem : '' }`}>
@@ -25,7 +31,11 @@ const ProductOrdered = ({ productInfo, deleteItem = null }) => {
           <span className={styles.priceProduct}>{becomeDollar(productInfo.price)} </span>
           {
             deleteItem !== null ?
-            <div className={`${styles.closeIcon} ${styles.closeItem}`} onClick={deleteProductOrdered}>
+            <div className={`${styles.closeIcon} ${styles.closeItem}`}
+              onClick={deleteProductOrdered}
+              onKeyDown={keyDownDeleteProductOrdered}
+              role="presentation"
+            >
               <Image
                 src={xIconSvg}
                 width={12}

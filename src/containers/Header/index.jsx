@@ -31,6 +31,8 @@ class Header extends Component {
     this.handleMenuNav = this.handleMenuNav.bind(this);
     this.removeShoppingTabStyle = this.removeShoppingTabStyle.bind(this);
     this.showShoppingCard = this.showShoppingCard.bind(this);
+    this.keyDownShowMenu = this.keyDownShowMenu.bind(this);
+    this.keyDownShowShoppingCard = this.keyDownShowShoppingCard.bind(this);
   }
 
   componentDidMount() {
@@ -108,6 +110,18 @@ class Header extends Component {
     }
   }
 
+  keyDownShowMenu(event) {
+    if(event.keyCode === 13) {
+      this.showMenu();
+    }
+  }
+
+  keyDownShowShoppingCard(event) {
+    if(event.keyCode === 13) {
+      this.showShoppingCard();
+    }
+  }
+
   render() {
     // making sure the right position for larger devices is provided when the component is completely loaded.
     let leftPosition = "5%";
@@ -122,7 +136,11 @@ class Header extends Component {
       <header className={styles.headerHomeSection}>
         <nav className={styles.navSection}>
           <div ref={this.props.refHeader} className={styles.headerHomeNav}>
-            <div className={styles.menuIcon} onClick={this.showMenu}>
+            <div className={styles.menuIcon}
+              onClick={this.showMenu}
+              onKeyDown={this.keyDownShowMenu}
+              role="presentation"
+            >
               <Image
                 src={menuSvg}
                 width={25}
@@ -160,7 +178,11 @@ class Header extends Component {
                 handleMenuNav={this.handleMenuNav}
               />
               <CartCircle />
-              <div className={styles.shoppingCart} onClick={this.showShoppingCard}>
+              <div className={styles.shoppingCart}
+                onClick={this.showShoppingCard}
+                onKeyDown={this.keyDownShowShoppingCard}
+                role="presentation"
+              >
                 <Image
                   src={shoppingIconSvg}
                   width={25}

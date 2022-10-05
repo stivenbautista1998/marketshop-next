@@ -15,9 +15,13 @@ const IconApp = ({ bigSize = false, size = 85, redirect = null }) => {
         objectFit="fill"
         alt="logo of the webpage"
       />
-      <span className={ bigSize ? `${styles.textLogo} ${styles.mainBlue} ${styles.bigLogoText}` : `${styles.textLogo} ${styles.mainBlue} ${styles.normalLogoText}`}>
-          <span className={styles.green__message}>Market </span>
-          Shop
+      <span className={
+        bigSize ?
+        `${styles.textLogo} ${styles.mainBlue} ${styles.bigLogoText}`
+        : `${styles.textLogo} ${styles.mainBlue} ${styles.normalLogoText}`
+      }>
+        <span className={styles.green__message}>Market </span>
+        Shop
       </span>
     </>
   );

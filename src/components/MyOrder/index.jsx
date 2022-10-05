@@ -11,6 +11,12 @@ const MyOrder = ({ orderInfo, totalOrdered }) => {
     console.log("showDetails has been clicked!!");
   }
 
+  function handleKeyDown(event) {
+    if(event.keyCode === 13) {
+      showDetails();
+    }
+  }
+
   return (
     <article className={`${styles.shoppingCardItem} my-orders__item ${styles.myOrders__itemSpecial}`}>
       <div className="part-up">
@@ -21,7 +27,11 @@ const MyOrder = ({ orderInfo, totalOrdered }) => {
       </div>
       <div className={styles.backContainer}>
         <span className={styles.priceProduct}>{totalOrdered()}</span>
-        <div className={`${styles.closeIcon} ${styles.closeItem}`} onClick={showDetails}>
+        <div className={`${styles.closeIcon} ${styles.closeItem}`}
+          onClick={showDetails}
+          onKeyDown={handleKeyDown}
+          role="presentation"
+        >
           <Link
             /* href={{ pathname: `/my-order/${orderInfo.id}`, query: orderInfo }} */
             href={`/my-order/${orderInfo.id}`}

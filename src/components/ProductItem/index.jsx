@@ -58,10 +58,24 @@ const ProductItem = ({ product, setProductDetailTab }) => {
     if(wrongSelectionCounter !== 0) setWrongSelectionCounter(0);
   }
 
+  function keyDownDetailTab(event) {
+    if(event.keyCode === 13) {
+      openDetailTab();
+    }
+  }
+
+  function keyDownSelectProduct(event) {
+    if(event.keyCode === 13) {
+      selectProduct();
+    }
+  }
+
   return (
     <article className={styles.articleSectionItem}>
       <div onClick={openDetailTab}
+        onKeyDown={keyDownDetailTab}
         className={`${styles.articleSectionItem__img} ${styles.newImg}`}
+        role="presentation"
         style={{backgroundImage: `url(${product.images[0]})`}}>
       </div>
       <div className={`${styles.articleSectionItem__content} ${isSelected ? 'clickedBtn' : ''}`}>
@@ -74,7 +88,11 @@ const ProductItem = ({ product, setProductDetailTab }) => {
           </span>
         </div>
         <div className={`${styles.circleBorder}`}></div>
-        <div className={`${styles.add_to_card}`} onClick={selectProduct}>
+        <div className={`${styles.add_to_card}`}
+          onClick={selectProduct}
+          onKeyDown={keyDownSelectProduct}
+          role="presentation"
+        >
           <Image
             src={imgUrl}
             width={40}
