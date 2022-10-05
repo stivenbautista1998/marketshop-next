@@ -1,0 +1,72 @@
+{
+  "short_name": "MarketShop",
+  "name": "MarketShop PWA",
+  "description": "This is an PWA App that allows you to shop online products.",
+  "lang": "en-US",
+  "icons": [
+    {
+      "src": "/app-icons/app-icon-60.png",
+      "type": "image/png",
+      "sizes": "60x60",
+      "purpose": "any"
+    },
+    {
+      "src": "/app-icons/app-icon-87.png",
+      "type": "image/png",
+      "sizes": "87x87",
+      "purpose": "any"
+    },
+    {
+      "src": "/app-icons/app-icon-120.png",
+      "type": "image/png",
+      "sizes": "120x120",
+      "purpose": "any"
+    },
+    {
+      "src": "/app-icons/app-icon-150.png",
+      "type": "image/png",
+      "sizes": "150x150",
+      "purpose": "any"
+    },
+    {
+      "src": "/app-icons/app-icon-171.png",
+      "type": "image/png",
+      "sizes": "171x171",
+      "purpose": "any"
+    },
+    {
+      "src": "/app-icons/app-icon-180.png",
+      "type": "image/png",
+      "sizes": "180x180",
+      "purpose": "any"
+    },
+    {
+      "src": "/app-icons/app-icon-200.png",
+      "type": "image/png",
+      "sizes": "200x200",
+      "purpose": "any"
+    },
+    {
+      "src": "/app-icons/app-icon-216.png",
+      "type": "image/png",
+      "sizes": "216x216",
+      "purpose": "any"
+    },
+    {
+      "src": "/app-icons/app-icon-228.png",
+      "type": "image/png",
+      "sizes": "228x228",
+      "purpose": "any"
+    }
+  ],
+  "dir": "ltr",
+  "prefer_related_application": false,
+  "scope": "/",
+  "start_url": "/",
+  "orientation": "portrait",
+  "categories": ["shopping", "food", "books", "business"],
+  "display_override": ["standalone", "fullscreen"],
+  "display": "standalone",
+  "theme_color": "#acd9b2",
+  "background_color": "#FFF"
+}
