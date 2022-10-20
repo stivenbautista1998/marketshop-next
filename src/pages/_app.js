@@ -1,4 +1,3 @@
-// import '../styles/globals.css'
 import { AppContextProvider } from '@context/AppContext';
 import { SyncInfoProvider } from '@context/SyncContext';
 import { AuthContextProvider } from '@context/AuthContext';

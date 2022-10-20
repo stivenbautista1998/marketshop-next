@@ -1,11 +1,14 @@
 import { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 
+const API = process.env.NEXT_PUBLIC_API_URL;
+const VERSION = process.env.NEXT_PUBLIC_API_VERSION;
+
 function getEndpoint(categoryId) {
   if (categoryId === 0) {
-    return 'https://api.escuelajs.co/api/v1/products'; // ?limit=500&offset=1
+    return `${API}/api/${VERSION}/products`; // ?limit=500&offset=1
   } else {
-    return `https://api.escuelajs.co/api/v1/categories/${categoryId}/products`;
+    return `${API}/api/${VERSION}/categories/${categoryId}/products`;
   }
 }
 
