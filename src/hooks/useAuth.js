@@ -1,7 +1,15 @@
 import { useEffect } from 'react';
 import { useStorageAuth } from './useStorageAuth';
 
-const defaultUser = [
+/* type UserInfo = {
+  id: string,
+  username: string,
+  image: string,
+  email: string,
+  passWord: string,
+} */
+
+const defaultUser/* : UserInfo[] */ = [
   {
     id: 'user-key-995701412669',
     username: 'stivenbautista',

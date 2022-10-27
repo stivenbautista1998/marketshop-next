@@ -20,7 +20,7 @@ function capitalizeAll(str: string): string {
   return result;
 }
 
-function becomeDollar(value): string {
+function becomeDollar(value: number): string {
   var formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
