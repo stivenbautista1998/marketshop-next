@@ -1,15 +1,23 @@
 import { useState, useEffect } from 'react';
 
-const useStorageAuth = (nameItem, nameCurrentItem, initialValue) => {
+interface InitialValue {
+  id: string,
+  username: string,
+  image: string,
+  email: string,
+  passWord: string,
+}
+
+const useStorageAuth = (nameItem: string, nameCurrentItem: string, initialValue: InitialValue[]) => {
   const [usersInfo, setUsersInfo] = useState(initialValue);
-  const [loadingUsersInfo, setLoadingUsersInfo] = useState(true);
-  const [errorUsersInfo, setErrorUsersInfo] = useState(false);
+  const [loadingUsersInfo, setLoadingUsersInfo] = useState<boolean>(true);
+  const [errorUsersInfo, setErrorUsersInfo] = useState<boolean | string>(false);
 
-  const [currentUser, setCurrentUser] = useState(undefined); // added to test
-  const [loadingCurrentUser, setLoadingCurrentUser] = useState(true);
-  const [errorCurrentUser, setErrorCurrentUser] = useState(false);
+  const [currentUser, setCurrentUser] = useState<undefined | null | InitialValue>(undefined); // added to test
+  const [loadingCurrentUser, setLoadingCurrentUser] = useState<boolean>(true);
+  const [errorCurrentUser, setErrorCurrentUser] = useState<boolean | string>(false);
 
-  const [syncAuth, setSyncAuth] = useState(true);
+  const [syncAuth, setSyncAuth] = useState<boolean>(true);
 
   useEffect(() => {
     try {
@@ -21,7 +29,9 @@ const useStorageAuth = (nameItem, nameCurrentItem, initialValue) => {
       }
       setLoadingUsersInfo(false);
     } catch (error) {
-      setErrorUsersInfo(error.message);
+      if(error instanceof EvalError ) {
+        setErrorUsersInfo(error.message);
+      }
       setLoadingUsersInfo(false);
     }
   }, [nameItem, initialValue]);
@@ -40,7 +50,9 @@ const useStorageAuth = (nameItem, nameCurrentItem, initialValue) => {
       setLoadingCurrentUser(false);
       setSyncAuth(true);
     } catch (error) {
-      setErrorCurrentUser(error.message);
+      if(error instanceof EvalError) {
+        setErrorCurrentUser(error.message);        
+      }
       setLoadingCurrentUser(false);
     }
   }, [nameCurrentItem, syncAuth]);
@@ -49,7 +61,7 @@ const useStorageAuth = (nameItem, nameCurrentItem, initialValue) => {
    * @param  {object} item
    * It updates the global list info of users, by passing the new object.
    */
-  const saveUsersInfo = (item) => {
+  const saveUsersInfo = (item: InitialValue[]) => {
     setErrorUsersInfo(false);
     setLoadingUsersInfo(true);
 
@@ -58,7 +70,9 @@ const useStorageAuth = (nameItem, nameCurrentItem, initialValue) => {
       setUsersInfo(item);
       setLoadingUsersInfo(false);
     } catch (error) {
-      setErrorUsersInfo(error.message);
+      if(error instanceof EvalError) {
+        setErrorUsersInfo(error.message);
+      }
       setLoadingUsersInfo(false);
     }
   };
@@ -67,7 +81,7 @@ const useStorageAuth = (nameItem, nameCurrentItem, initialValue) => {
    * @param  {object} item
    * It updates the current user info, by passing the new object.
    */
-  const saveCurrentUser = (item) => {
+  const saveCurrentUser = (item: InitialValue) => {
     setErrorCurrentUser(false);
     setLoadingCurrentUser(true);
 
@@ -76,12 +90,14 @@ const useStorageAuth = (nameItem, nameCurrentItem, initialValue) => {
       setCurrentUser(item);
       setLoadingCurrentUser(false);
     } catch (error) {
-      setErrorCurrentUser(error.message);
+      if(error instanceof EvalError) {
+        setErrorCurrentUser(error.message);        
+      }
       setLoadingCurrentUser(false);
     }
   };
 
-  const synchronizeCurrentUser = (lastUserInfo = null) => {
+  const synchronizeCurrentUser = (lastUserInfo: (InitialValue | null) = null) => {
     if (lastUserInfo) {
       const updatedUserInfo = usersInfo.map((item) => {
         if (item.id === lastUserInfo?.id) {

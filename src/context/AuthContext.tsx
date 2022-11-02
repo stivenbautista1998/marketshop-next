@@ -3,10 +3,18 @@ import { useAuth } from '@hooks/useAuth';
 
 const AuthContext = React.createContext({});
 
-function AuthContextProvider({ children }) {
+type Props = {
+  children: JSX.Element
+}
+
+function AuthContextProvider({ children }: Props) {
   const authInfo = useAuth();
 
-  return <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>;
+  return (
+    <AuthContext.Provider value={authInfo}>
+      {children}
+    </AuthContext.Provider>
+  );
 }
 
 export { AuthContext, AuthContextProvider };
