@@ -1,15 +1,44 @@
 import { useState, useEffect } from 'react';
 
-const useStorageUserOrders = (nameItem, initialValue) => {
+interface UserOrdersType {
+  userId: string;
+  cart: ProductType[];
+  orders: UserOrdersType[];
+  lastRemoved: ProductType[];
+  productDetailOpen: null | ProductType;
+}
+
+interface ProductType {
+  id: number;
+  title: string;
+  category: CategoryProductType;
+  description: string;  
+  images?: string[];
+  price?: number;
+}
+
+interface CategoryProductType {
+  id: number;
+  name: string;
+  image: string;
+}
+
+interface UserOrdersType {
+  id: string;
+  date: string;
+  productsOrdered: ProductType[];
+}
+
+const useStorageUserOrders = (nameItem: string, initialValue: UserOrdersType[]) => {
   const [usersOrderLists, setUsersOrderLists] = useState(initialValue);
-  const [loadingUsersOrderLists, setLoadingUsersOrderLists] = useState(true);
-  const [errorUsersOrderLists, setErrorUsersOrderLists] = useState(false);
+  const [loadingUsersOrderLists, setLoadingUsersOrderLists] = useState<boolean>(true);
+  const [errorUsersOrderLists, setErrorUsersOrderLists] = useState<boolean | string>(false);
 
-  const [currentUserOrders, setCurrentUserOrders] = useState(null);
-  const [loadingCurrentUserOrders, setLoadingCurrentUserOrders] = useState(true);
-  const [errorCurrentUserOrders, setErrorCurrentUserOrders] = useState(false);
+  const [currentUserOrders, setCurrentUserOrders] = useState<null | UserOrdersType>(null);
+  const [loadingCurrentUserOrders, setLoadingCurrentUserOrders] = useState<boolean>(true);
+  const [errorCurrentUserOrders, setErrorCurrentUserOrders] = useState<boolean>(false);
 
-  const [sync, setSyncOfCurrentUser] = useState(true);
+  const [sync, setSyncOfCurrentUser] = useState<boolean>(true);
 
   useEffect(() => {
     try {
@@ -21,7 +50,9 @@ const useStorageUserOrders = (nameItem, initialValue) => {
       }
       setLoadingUsersOrderLists(false);
     } catch (error) {
-      setErrorUsersOrderLists(error.message);
+      if(error instanceof EvalError ) {
+        setErrorUsersOrderLists(error.message);
+      }
       setLoadingUsersOrderLists(false);
     }
   }, [nameItem, initialValue]);
@@ -43,7 +74,9 @@ const useStorageUserOrders = (nameItem, initialValue) => {
       setLoadingCurrentUserOrders(false);
       setSyncOfCurrentUser(true);
     } catch (error) {
-      setErrorCurrentUserOrders(error.message);
+      if(error instanceof EvalError ) {
+        setErrorUsersOrderLists(error.message);
+      }
       setLoadingCurrentUserOrders(false);
     }
   }, [nameItem, sync]);
@@ -52,7 +85,7 @@ const useStorageUserOrders = (nameItem, initialValue) => {
    * @param  {object} item
    * It updates the order lists global state of all the users, by passing the new object.
    */
-  const saveUsersOrderLists = (item) => {
+  const saveUsersOrderLists = (item: UserOrdersType[]) => {
     setErrorUsersOrderLists(false);
     setLoadingUsersOrderLists(true);
 
@@ -61,7 +94,9 @@ const useStorageUserOrders = (nameItem, initialValue) => {
       setUsersOrderLists(item);
       setLoadingUsersOrderLists(false);
     } catch (error) {
-      setErrorUsersOrderLists(error.message);
+      if(error instanceof EvalError ) {
+        setErrorUsersOrderLists(error.message);
+      }
       setLoadingUsersOrderLists(false);
     }
   };
@@ -70,7 +105,7 @@ const useStorageUserOrders = (nameItem, initialValue) => {
    * @param  {object} item
    * It updates the current user order lists, by passing the new object.
    */
-  const saveCurrentUserOrders = (item) => {
+  const saveCurrentUserOrders = (item: UserOrdersType) => {
     setErrorCurrentUserOrders(false);
     setLoadingCurrentUserOrders(true);
 
@@ -79,7 +114,9 @@ const useStorageUserOrders = (nameItem, initialValue) => {
       setCurrentUserOrders(item);
       setLoadingCurrentUserOrders(false);
     } catch (error) {
-      setErrorCurrentUserOrders(error.message);
+      if(error instanceof EvalError ) {
+        setErrorUsersOrderLists(error.message);
+      }
       setLoadingCurrentUserOrders(false);
     }
   };
